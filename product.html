@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Handcrafted fresh flower bouquet product details, flower care guide, customer reviews and same-day delivery options.">
+    <title>Flower Bouquet Details - Happy Petals</title>
+
+    <!-- Bootstrap CSS & FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/flowershop.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Top Announcement Bar -->
+    <div class="header-top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 text-left">
+                    <span>🌸 Handpicked Freshness Guaranteed | Same-Day Delivery Across City</span>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <a href="delivery.html" style="margin-right:15px;"><i class="fa fa-truck"></i> Delivery Information</a>
+                    <a href="contact.html"><i class="fa fa-phone"></i> Help: 800-123-1234</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Header & Navigation -->
+    <div class="site-header-wrapper" id="siteHeader">
+        <div class="container">
+            <div class="header-main-nav">
+                <!-- Brand Logo -->
+                <a href="index.html" class="brand-logo-wrap">
+                    <div class="brand-logo-icon">🌸</div>
+                    <div>
+                        <h1 class="brand-logo-text">Happy <span>Petals</span></h1>
+                        <span class="brand-tagline">Artisan Florist &amp; Gifts</span>
+                    </div>
+                </a>
+
+                <!-- Live Search Bar -->
+                <div class="header-search-bar hidden-xs">
+                    <form onsubmit="event.preventDefault(); FlowerShop.performSearch();">
+                        <input type="text" class="header-search-input" placeholder="Search roses, lilies, orchids..." autocomplete="off" />
+                        <button type="submit" class="header-search-submit" title="Search">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                    <div class="search-dropdown"></div>
+                </div>
+
+                <!-- Navigation Quick Actions -->
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <!-- Wishlist Icon with count badge -->
+                    <a href="account.html?tab=wishlist" class="nav-action-btn" title="My Wishlist">
+                        <i class="fa fa-heart-o text-danger"></i>
+                        <span class="nav-badge-count wishlist-count" style="display:none;">0</span>
+                    </a>
+
+                    <!-- Cart Trigger Button with badge -->
+                    <button class="nav-action-btn cart-trigger-btn" title="View Shopping Bag">
+                        <i class="fa fa-shopping-bag" style="color:#F08080;"></i>
+                        <span class="nav-badge-count cart-count" style="display:none;">0</span>
+                    </button>
+
+                    <!-- User Account / Auth Dropdown -->
+                    <div id="navUserAuth" style="display:inline-block;">
+                        <a href="login.html" class="nav-action-btn" title="Sign In">
+                            <i class="fa fa-user"></i>
+                            <span class="hidden-xs" style="font-size:13px;font-family:'Arvo',serif;">Sign In</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Category Navigation Bar -->
+        <nav id="mainNav" class="navbar navbar-default navbar-custom" style="margin-bottom:0;padding:8px 0;border-radius:0;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbarCollapse">
+                        <span class="sr-only">Toggle navigation</span>Menu <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="mainNavbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="current-page-item"><a href="special.html">Shop Catalog</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Occasions <span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-custom">
+                                <li><a href="special.html?occ=anniversary">Anniversary Flowers</a></li>
+                                <li><a href="special.html?occ=birthday">Birthday Flowers</a></li>
+                                <li><a href="special.html?occ=valentine">Valentine's Flowers</a></li>
+                                <li><a href="special.html?occ=wedding">Wedding &amp; Reception</a></li>
+                                <li><a href="special.html?occ=congratulations">Congratulations</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-custom">
+                                <li><a href="special.html?cat=roses">Roses &amp; Romance</a></li>
+                                <li><a href="special.html?cat=bouquets">Mixed Flower Bouquets</a></li>
+                                <li><a href="special.html?cat=lilies">Lilies &amp; Luxury</a></li>
+                                <li><a href="special.html?cat=plants">Indoor Plants</a></li>
+                                <li><a href="special.html?cat=gifts">Gifts &amp; Hampers</a></li>
+                                <li><a href="special.html?cat=specials">Today's Specials</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="testimonials.html">About &amp; Reviews</a></li>
+                        <li><a href="delivery.html">Delivery Policy</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container product-detail-container">
+            <!-- Breadcrumbs -->
+            <ol class="breadcrumb breadcrumb-custom" style="margin-top:15px;margin-bottom:25px;">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="special.html">Catalog</a></li>
+                <li class="active" id="detailBreadcrumbName">Flower Details</li>
+            </ol>
+
+            <!-- Product Showcase Row -->
+            <div class="row">
+                <!-- Left: Multi-image interactive gallery -->
+                <div class="col-md-6 col-sm-12">
+                    <div class="product-gallery-card">
+                        <div class="product-main-view">
+                            <img id="detailMainImage" src="images/featured1.png" alt="Flower Bouquet" class="product-main-img" onerror="this.src='images/featured1.png'" />
+                        </div>
+                        <!-- Thumbnail selector row -->
+                        <div class="product-thumbnail-bar" id="detailThumbnailBar">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Product Information & Purchase Panel -->
+                <div class="col-md-6 col-sm-12">
+                    <div class="product-info-panel">
+                        <span id="detailBadge" class="product-info-badge">Popular Choice</span>
+                        <h2 id="detailTitle" class="product-info-title">Blossoms in Pink</h2>
+
+                        <!-- Rating & Reviews Anchor -->
+                        <div class="product-rating-bar" id="detailRatingWrap">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            <strong>4.8</strong>
+                            <a href="#reviewsTab" onclick="FlowerShop.switchTab('reviews')">(34 customer reviews)</a>
+                        </div>
+
+                        <!-- Pricing & Discount -->
+                        <div class="product-price-section">
+                            <span id="detailPrice" class="product-current-price">Rs 1,099</span>
+                            <span id="detailOldPrice" class="product-original-price">Rs 1,399</span>
+                            <span id="detailDiscountPill" class="product-discount-pill">21% OFF</span>
+                        </div>
+
+                        <!-- Stock Status Indicator -->
+                        <div id="detailStock" class="stock-status-indicator in-stock">
+                            <span class="stock-dot"></span>
+                            <span>In Stock (18 available)</span>
+                        </div>
+
+                        <!-- Short Description -->
+                        <p id="detailDesc" class="product-short-desc">
+                            A delicate arrangement of fresh pink roses and carnations, designed to express grace, elegance and fond admiration.
+                        </p>
+
+                        <!-- Quantity Selector -->
+                        <div style="display:flex;align-items:center;gap:15px;margin-bottom:20px;">
+                            <label style="margin:0;font-weight:700;color:#333;">Quantity:</label>
+                            <div class="qty-stepper-wrap">
+                                <button type="button" class="qty-stepper-btn" onclick="FlowerShop.changeDetailQty(-1)">-</button>
+                                <input type="number" id="detailQtyInput" class="qty-stepper-input" value="1" min="1" max="25" readonly />
+                                <button type="button" class="qty-stepper-btn" onclick="FlowerShop.changeDetailQty(1)">+</button>
+                            </div>
+                            <span style="font-size:12px;color:#888;">Fresh stem guarantee</span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="product-action-buttons">
+                            <button type="button" id="detailAddCartBtn" class="btn-detail-addcart">
+                                <i class="fa fa-shopping-bag"></i> Add to Cart
+                            </button>
+                            <button type="button" id="detailBuyNowBtn" class="btn-detail-buynow">
+                                <i class="fa fa-bolt"></i> Buy Now
+                            </button>
+                            <button type="button" id="detailWishlistBtn" class="btn-detail-wishlist" title="Save to Wishlist">
+                                <i class="fa fa-heart-o"></i>
+                            </button>
+                        </div>
+
+                        <!-- Trust Features List -->
+                        <div style="margin-top:28px;padding-top:20px;border-top:1px solid #f0f0f0;display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;color:#555;">
+                            <div><i class="fa fa-check-circle text-success" style="margin-right:6px;"></i> 100% Farm Fresh Stems</div>
+                            <div><i class="fa fa-truck text-primary" style="margin-right:6px;"></i> Same-Day Delivery Option</div>
+                            <div><i class="fa fa-gift text-danger" style="margin-right:6px;"></i> Free Greeting Message Card</div>
+                            <div><i class="fa fa-shield text-info" style="margin-right:6px;"></i> 100% Safe &amp; Secure Payment</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Information Tabs -->
+            <div class="product-tabs-wrapper" id="reviewsTab">
+                <div class="product-tabs-nav">
+                    <button class="product-tab-btn active" data-tab-target="desc" onclick="FlowerShop.switchTab('desc')">Description</button>
+                    <button class="product-tab-btn" data-tab-target="care" onclick="FlowerShop.switchTab('care')">Flower Care Instructions</button>
+                    <button class="product-tab-btn" data-tab-target="delivery" onclick="FlowerShop.switchTab('delivery')">Delivery &amp; Packaging</button>
+                    <button class="product-tab-btn" data-tab-target="return" onclick="FlowerShop.switchTab('return')">Freshness Guarantee &amp; Returns</button>
+                    <button class="product-tab-btn" data-tab-target="reviews" onclick="FlowerShop.switchTab('reviews')">Customer Reviews</button>
+                </div>
+
+                <div class="product-tab-content">
+                    <!-- Tab 1: Description -->
+                    <div id="tabPane_desc" class="product-tab-pane" style="display:block;">
+                        <h4 style="font-family:'Arvo',serif;margin-top:0;">Handcrafted by Master Florists</h4>
+                        <p style="color:#555;line-height:1.8;font-size:15px;">
+                            Each arrangement from Happy Petals is freshly created by experienced florists right before dispatch. We harvest stems daily from premium botanical nurseries and package them with hydration pouches so your recipient receives buds that unfurl gracefully over several days.
+                        </p>
+                        <p style="color:#555;line-height:1.8;font-size:15px;">
+                            Perfect for celebrating milestones, expressing romantic affection, sending heartfelt gratitude, or brightening someone's day with aromatic warmth.
+                        </p>
+                    </div>
+
+                    <!-- Tab 2: Flower Care Instructions -->
+                    <div id="tabPane_care" class="product-tab-pane" style="display:none;">
+                        <h4 style="font-family:'Arvo',serif;margin-top:0;">How to Keep Your Flowers Fresh for 7+ Days</h4>
+                        <ul class="care-guide-list" id="detailCareList">
+                            <!-- Populated dynamically with care tips -->
+                        </ul>
+                    </div>
+
+                    <!-- Tab 3: Delivery Information -->
+                    <div id="tabPane_delivery" class="product-tab-pane" style="display:none;">
+                        <h4 style="font-family:'Arvo',serif;margin-top:0;">Chilled Delivery &amp; Express Slots</h4>
+                        <p id="detailDeliveryDesc" style="color:#555;line-height:1.8;font-size:15px;">
+                            Delivered in climate-controlled temperature vans with hydro-gel stem wraps to guarantee garden freshness upon unboxing.
+                        </p>
+                        <div class="row" style="margin-top:20px;">
+                            <div class="col-sm-4">
+                                <div style="background:#fbfbfb;border:1px solid #eee;border-radius:8px;padding:14px;text-align:center;">
+                                    <i class="fa fa-sun-o" style="font-size:24px;color:#f39c12;margin-bottom:8px;"></i>
+                                    <h5>Morning Slot</h5>
+                                    <p class="text-muted" style="font-size:13px;margin:0;">9:00 AM - 1:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div style="background:#fbfbfb;border:1px solid #eee;border-radius:8px;padding:14px;text-align:center;">
+                                    <i class="fa fa-clock-o" style="font-size:24px;color:#2a9d8f;margin-bottom:8px;"></i>
+                                    <h5>Afternoon Slot</h5>
+                                    <p class="text-muted" style="font-size:13px;margin:0;">1:00 PM - 6:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div style="background:#fbfbfb;border:1px solid #eee;border-radius:8px;padding:14px;text-align:center;">
+                                    <i class="fa fa-moon-o" style="font-size:24px;color:#5B2C6F;margin-bottom:8px;"></i>
+                                    <h5>Midnight Surprise</h5>
+                                    <p class="text-muted" style="font-size:13px;margin:0;">11:30 PM - 12:00 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Return Policy -->
+                    <div id="tabPane_return" class="product-tab-pane" style="display:none;">
+                        <h4 style="font-family:'Arvo',serif;margin-top:0;">100% Bloom Delight &amp; Freshness Guarantee</h4>
+                        <p id="detailReturnDesc" style="color:#555;line-height:1.8;font-size:15px;">
+                            We take utmost pride in the quality of every floral stem. If your blooms arrive damaged or wither within 24 hours of delivery, simply share a quick photo with our customer support team and we will deliver a brand new replacement bouquet free of charge.
+                        </p>
+                    </div>
+
+                    <!-- Tab 5: Customer Reviews & Submission -->
+                    <div id="tabPane_reviews" class="product-tab-pane" style="display:none;">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h4 style="font-family:'Arvo',serif;margin-top:0;">Verified Customer Feedback</h4>
+                                <div id="detailReviewsList" style="margin-top:15px;">
+                                    <!-- Populated dynamically -->
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div style="background:#fafafa;border:1px solid #eee;border-radius:10px;padding:20px;">
+                                    <h4 style="font-family:'Arvo',serif;margin-top:0;font-size:18px;">Write a Review</h4>
+                                    <form id="reviewForm" onsubmit="FlowerShop.submitReview(event)">
+                                        <div class="form-group">
+                                            <label for="reviewAuthor">Your Name *</label>
+                                            <input type="text" id="reviewAuthor" class="form-control" placeholder="e.g. Priya Sharma" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reviewRating">Rating *</label>
+                                            <select id="reviewRating" class="form-control">
+                                                <option value="5">★★★★★ (5 Stars - Outstanding Freshness)</option>
+                                                <option value="4">★★★★☆ (4 Stars - Great Quality)</option>
+                                                <option value="3">★★★☆☆ (3 Stars - Average)</option>
+                                                <option value="2">★★☆☆☆ (2 Stars - Needs Improvement)</option>
+                                                <option value="1">★☆☆☆☆ (1 Star - Poor)</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reviewComment">Your Feedback *</label>
+                                            <textarea id="reviewComment" class="form-control" rows="3" placeholder="Tell us about the floral fragrance, packaging, or recipient's reaction..." required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-block btn-primary" style="background:#F08080;border:none;font-weight:700;">
+                                            <i class="fa fa-paper-plane"></i> Submit Floral Review
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related / Recommended Products Section -->
+            <div style="margin-top:50px;">
+                <div class="main-heading text-center">
+                    <h3 style="font-family:'Arvo',serif;font-size:26px;">You May Also Love</h3>
+                    <p class="text-muted" style="font-size:15px;">Handpicked complementary floral arrangements</p>
+                    <hr>
+                </div>
+                <div class="row" id="detailRelatedGrid">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container clearfix">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-3 footer-column">
+                        <h3>Popular Categories</h3>
+                        <a href="special.html">Today's Specials</a><br/>
+                        <a href="special.html?cat=roses">Anniversary Roses</a><br/>
+                        <a href="special.html?cat=bouquets">Birthday Bouquets</a><br/>
+                        <a href="special.html?cat=lilies">Luxury Lilies</a>
+                    </div>
+                    <div class="col-lg-3 footer-column">
+                        <h3>Customer Care</h3>
+                        <a href="account.html">My Account</a><br/>
+                        <a href="account.html?tab=orders">Order Tracking</a><br/>
+                        <a href="account.html?tab=wishlist">My Wishlist</a><br/>
+                        <a href="delivery.html">Delivery &amp; Care Policies</a>
+                    </div>
+                    <div class="col-lg-3 footer-column">
+                        <h3>Company</h3>
+                        <a href="testimonials.html">About Happy Petals</a><br/>
+                        <a href="testimonials.html">Customer Reviews</a><br/>
+                        <a href="contact.html">Store Locations</a><br/>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                    <div class="col-lg-3">
+                        <h3>Happy Petals</h3>
+                        <address>
+                            1234 Flower Avenue,<br/>San Jose, California.<br/>
+                            <span class="text-primary" style="font-size:16px;font-weight:bold;">Call 800-123-1234</span>
+                        </address>
+                        <p style="font-size:13px;color:#777;">Delivering smiles and fresh blossoms 7 days a week.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Happy Petals. Handcrafted bouquets delivered fresh with care.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/shop.js"></script>
+
+</body>
+</html>

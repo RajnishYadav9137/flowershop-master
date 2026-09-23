@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Customer reviews and testimonials for Happy Petals flower delivery">
+    <meta name="author" content="Happy Petals">
+    <title>Customer Testimonials - Happy Petals</title>
+
+    <!-- Bootstrap 3.3.7 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="css/flowershop.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .testimonials-hero {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe3e3 100%);
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            border: 1px solid #ffd6d6;
+        }
+        .stats-badge-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #f0f0f0;
+            margin-bottom: 15px;
+        }
+        .stats-badge-card h2 {
+            font-family: 'Arvo', serif;
+            color: #F08080;
+            margin-top: 0;
+            font-size: 32px;
+        }
+        .testimonial-card {
+            background: #ffffff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 270px;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-color: #ffd2d2;
+        }
+        .testimonial-rating {
+            color: #f4a261;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        .testimonial-quote {
+            font-style: italic;
+            color: #444;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            flex-grow: 1;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #f8f8f8;
+            padding-top: 15px;
+        }
+        .testimonial-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #F08080;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .testimonial-info h4 {
+            margin: 0;
+            font-size: 15px;
+            font-family: 'Arvo', serif;
+            color: #222;
+        }
+        .testimonial-info p {
+            margin: 2px 0 0;
+            font-size: 12px;
+            color: #888;
+        }
+        .verified-badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 6px;
+            font-weight: normal;
+        }
+        .review-box {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body id="page-top" class="index">
+    <!-- Top Navigation -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-xs-3 top-menu">
+                <a href="registration.html"><i class="fa fa-user-plus"></i> Registration</a>
+            </div>
+            <div class="col-md-2 col-xs-3 top-menu">
+                <a href="login.html"><i class="fa fa-sign-in"></i> Login</a>
+            </div>
+            <div class="col-md-2 col-xs-3 top-menu">
+                <a href="delivery.html">Delivery</a>
+            </div>
+            <div class="col-md-2 col-xs-3 top-menu">
+                <a href="checkout.html">Checkout</a>
+            </div>
+            <div class="col-md-1 col-xs-2 top-menu">
+                <button class="cart-trigger-btn" title="View Cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="cart-badge" style="display:none;">0</span>
+                </button>
+            </div>
+            <div class="col-md-3 col-xs-12 top-menu search-container">
+                <form class="form-search-header form-inline" onsubmit="event.preventDefault(); FlowerShop.performSearch();">
+                    <label class="sr-only" for="exampleInputsearch">Search</label>
+                    <input type="text" class="form-control" id="exampleInputsearch" placeholder="Search flowers..." style="width:170px;float: left;" autocomplete="off" />
+                    <button type="submit" class="form-control" id="exampleInputgo" style="width: 40px"><i class="fa fa-search"></i></button>
+                </form>
+                <div id="searchDropdown" class="search-dropdown"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End of top navigation -->
+
+    <!-- Main Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">Happy Petals</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll"><a href="index.html">Home</a></li>
+                    <li class="page-scroll dropdown active">
+                        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">About Us <span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-custom">
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li><a href="contact.html">Store locations</a></li>
+                        </ul>
+                    </li>
+                    <li class="page-scroll dropdown">
+                        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Catalog <span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-custom">
+                            <li><a href="special.html">Today's Special</a></li>
+                            <li><a href="special.html?cat=roses">Roses</a></li>
+                            <li><a href="special.html?cat=bouquets">Bouquets</a></li>
+                        </ul>
+                    </li>
+                    <li class="page-scroll"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End of main navigation -->
+
+    <main>
+        <div class="container">
+            <div class="sub-nav" style="margin-bottom: 25px;">
+                <h3><a href="testimonials.html">Customer Testimonials</a></h3>
+                <ol class="breadcrumb breadcrumb-custom">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="javascript:void(0)">About Us</a></li>
+                    <li class="active">Testimonials</li>
+                </ol>
+            </div>
+
+            <!-- Hero Section -->
+            <div class="testimonials-hero text-center">
+                <h1 style="font-family:'Arvo',serif;color:#333;margin-top:0;">Loved by Over 15,000+ Happy Customers</h1>
+                <p style="font-size:16px;color:#666;max-width:700px;margin:12px auto 0;">
+                    Every bouquet tells a heartfelt story. Here is what our lovely community has to say about their fresh flower delivery experiences with Happy Petals.
+                </p>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="row" style="margin-bottom:30px;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="stats-badge-card">
+                        <h2>4.9 / 5.0</h2>
+                        <div style="color:#f4a261;margin-bottom:5px;">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                        <p class="text-muted" style="margin:0;">Average Rating (2,400+ Reviews)</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stats-badge-card">
+                        <h2>15,000+</h2>
+                        <i class="fa fa-heart" style="color:#e63946;font-size:18px;margin-bottom:5px;"></i>
+                        <p class="text-muted" style="margin:0;">Bouquets Delivered with Care</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stats-badge-card">
+                        <h2>100%</h2>
+                        <i class="fa fa-shield" style="color:#2a9d8f;font-size:18px;margin-bottom:5px;"></i>
+                        <p class="text-muted" style="margin:0;">Freshness & On-Time Guarantee</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stats-badge-card">
+                        <h2>Same-Day</h2>
+                        <i class="fa fa-truck" style="color:#e76f51;font-size:18px;margin-bottom:5px;"></i>
+                        <p class="text-muted" style="margin:0;">Express Hand Delivery Available</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Cards Grid -->
+            <div class="row">
+                <!-- Review 1 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="testimonial-rating">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">
+                                "Ordered the 'Bouquet of Love' for our 10th anniversary. The roses arrived dew-fresh, wrapped gorgeously with my custom card. My wife was genuinely teary-eyed. Simply outstanding service!"
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background:#e76f51;">RS</div>
+                            <div class="testimonial-info">
+                                <h4>Rahul Sharma <span class="verified-badge"><i class="fa fa-check-circle"></i> Verified Buyer</span></h4>
+                                <p>Ordered: Bouquet of Love</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="testimonial-rating">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">
+                                "The 'Colourful Spring' arrangement lit up my mother's birthday completely! The flowers remained fresh and fragrant for over a full week. I am making Happy Petals my go-to florist from now on."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background:#2a9d8f;">AP</div>
+                            <div class="testimonial-info">
+                                <h4>Ananya Patel <span class="verified-badge"><i class="fa fa-check-circle"></i> Verified Buyer</span></h4>
+                                <p>Ordered: Colourful Spring</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="testimonial-rating">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">
+                                "I was worried about ordering from abroad for my sister's graduation, but the process was seamless. The tracking was live and delivery was right on the dot. Highly recommended!"
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background:#F08080;">DM</div>
+                            <div class="testimonial-info">
+                                <h4>David Miller <span class="verified-badge"><i class="fa fa-check-circle"></i> Verified Buyer</span></h4>
+                                <p>Ordered: First Impressions Lilies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="testimonial-rating">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">
+                                "The sunflowers in 'Forever Yellow' were huge and so bright! They brought sheer joy to our home. Placing orders on this website was remarkably smooth, and the customer service was super responsive."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background:#f4a261;">PK</div>
+                            <div class="testimonial-info">
+                                <h4>Priya Kulkarni <span class="verified-badge"><i class="fa fa-check-circle"></i> Verified Buyer</span></h4>
+                                <p>Ordered: Forever Yellow</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="testimonial-rating">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">
+                                "Hands down the best flower shopping experience online! The cart drawer, instant discounts, and delivery time slot selection made planning a romantic surprise so effortless."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background:#264653;">VK</div>
+                            <div class="testimonial-info">
+                                <h4>Vikram Kapoor <span class="verified-badge"><i class="fa fa-check-circle"></i> Verified Buyer</span></h4>
+                                <p>Ordered: Royal Velvet Red Roses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="testimonial-rating">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">
+                                "I love that I can log into my account, re-order past favorites with 1-click, and track all my anniversary dates. Happy Petals has earned a loyal customer for life!"
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar" style="background:#a8dadc;color:#1d3557;">SN</div>
+                            <div class="testimonial-info">
+                                <h4>Sneha Nambiar <span class="verified-badge"><i class="fa fa-check-circle"></i> Verified Buyer</span></h4>
+                                <p>Ordered: Blossoms in Pink</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Review & CTA Section -->
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="review-box">
+                        <div class="text-center" style="margin-bottom:25px;">
+                            <h3 style="font-family:'Arvo',serif;margin:0;color:#333;">Share Your Flower Experience</h3>
+                            <p class="text-muted" style="margin-top:6px;">Have you received or gifted flowers from Happy Petals? We would love to hear your feedback!</p>
+                        </div>
+
+                        <form id="testimonialForm" onsubmit="event.preventDefault(); submitReview();">
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label for="revName">Your Name</label>
+                                    <input type="text" class="form-control" id="revName" placeholder="e.g. Sarah Jenkins" required />
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label for="revBouquet">Bouquet Purchased</label>
+                                    <input type="text" class="form-control" id="revBouquet" placeholder="e.g. Bouquet of Love" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="revRating">Rating</label>
+                                <select class="form-control" id="revRating">
+                                    <option value="5">⭐⭐⭐⭐⭐ (5/5 Stars - Excellent)</option>
+                                    <option value="4">⭐⭐⭐⭐ (4/5 Stars - Very Good)</option>
+                                    <option value="3">⭐⭐⭐ (3/5 Stars - Good)</option>
+                                    <option value="2">⭐⭐ (2/5 Stars - Fair)</option>
+                                    <option value="1">⭐ (1/5 Star - Poor)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="revComment">Your Review</label>
+                                <textarea class="form-control" id="revComment" rows="3" placeholder="Tell us about the flower quality, packaging and delivery..." required></textarea>
+                            </div>
+                            <div id="reviewAlert" style="display:none;margin-bottom:15px;" class="alert alert-success">
+                                <i class="fa fa-check-circle"></i> Thank you! Your testimonial has been submitted and will appear shortly after moderation.
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block btn-lg" style="background:#F08080;border:none;font-weight:bold;">
+                                <i class="fa fa-paper-plane"></i> Submit Testimonial
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Call to action card -->
+                    <div style="background:#264653;color:#fff;border-radius:12px;padding:30px;text-align:center;margin-bottom:50px;">
+                        <h3 style="font-family:'Arvo',serif;margin:0 0 10px;color:#fff;">Ready to Brighten Someone's Day?</h3>
+                        <p style="color:#e0e0e0;margin-bottom:20px;font-size:15px;">Choose from our hand-tied seasonal specials, romantic roses, and elegant lilies.</p>
+                        <a href="special.html" class="btn btn-lg" style="background:#F08080;color:#fff;border:none;padding:12px 30px;font-weight:bold;">
+                            <i class="fa fa-gift"></i> Explore Flower Catalog
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container clearfix">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-3 footer-column">
+                        <h3>Categories</h3>
+                        <a href="special.html">Specials</a><br/>
+                        <a href="special.html?cat=roses">Anniversary Roses</a><br/>
+                        <a href="special.html?cat=bouquets">Birthday Bouquets</a><br/>
+                        <a href="special.html?cat=lilies">Elegant Lilies</a>
+                    </div>
+                    <div class="col-lg-3 footer-column">
+                        <h3>My account</h3>
+                        <a href="account.html">My Account</a><br/>
+                        <a href="account.html">My Orders</a><br/>
+                        <a href="account.html">My Wishlist</a><br/>
+                        <a href="checkout.html">Checkout</a>
+                    </div>
+                    <div class="col-lg-3 footer-column">
+                        <h3>Information</h3>
+                        <a href="special.html">Catalog</a><br/>
+                        <a href="delivery.html">Delivery Policy</a><br/>
+                        <a href="testimonials.html">Testimonials</a><br/>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                    <div class="col-lg-3">
+                        <h3>Happy Petals</h3>
+                        <address>
+                            1234 Flower Avenue,<br/>San Jose, California.<br/>
+                            <p class="text-primary" style="margin-top:6px;">Call 800-123-1234</p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Happy Petals. All rights reserved. Handcrafted floral bouquets delivered fresh.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/shop.js"></script>
+
+    <script>
+        function submitReview() {
+            var alertBox = document.getElementById('reviewAlert');
+            if (alertBox) {
+                alertBox.style.display = 'block';
+            }
+            if (window.FlowerShop && FlowerShop.showToast) {
+                FlowerShop.showToast('Thank you for sharing your lovely review!', 'success');
+            }
+            document.getElementById('testimonialForm').reset();
+        }
+    </script>
+</body>
+</html>

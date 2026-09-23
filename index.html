@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Happy Petals - Premium flower delivery shop offering fresh bouquets, roses, lilies, orchids, plants, and bespoke gifts with same-day delivery.">
+    <title>Happy Petals - Fresh Handcrafted Flower Delivery</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/flowershop.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Top Announcement Bar -->
+    <div class="header-top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 text-left">
+                    <span>🌸 Fresh Morning Farm Blooms | Same-Day &amp; Midnight Delivery Available</span>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <a href="delivery.html" style="margin-right:15px;"><i class="fa fa-truck"></i> Delivery Information</a>
+                    <a href="contact.html"><i class="fa fa-phone"></i> Hotline: 800-123-1234</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Header & Navigation Wrapper -->
+    <div class="site-header-wrapper" id="siteHeader">
+        <div class="container">
+            <div class="header-main-nav">
+                <!-- Brand Logo -->
+                <a href="index.html" class="brand-logo-wrap">
+                    <div class="brand-logo-icon">🌸</div>
+                    <div>
+                        <h1 class="brand-logo-text">Happy <span>Petals</span></h1>
+                        <span class="brand-tagline">Artisan Florist &amp; Gifts</span>
+                    </div>
+                </a>
+
+                <!-- Search Bar with Live Suggestions -->
+                <div class="header-search-bar hidden-xs">
+                    <form onsubmit="event.preventDefault(); FlowerShop.performSearch();">
+                        <input type="text" class="header-search-input" placeholder="Search roses, bouquets, lilies..." autocomplete="off" />
+                        <button type="submit" class="header-search-submit" title="Search">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                    <div class="search-dropdown"></div>
+                </div>
+
+                <!-- Navigation Quick Actions -->
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <!-- Wishlist Icon with count badge -->
+                    <a href="account.html?tab=wishlist" class="nav-action-btn" title="My Wishlist">
+                        <i class="fa fa-heart-o text-danger"></i>
+                        <span class="nav-badge-count wishlist-count" style="display:none;">0</span>
+                    </a>
+
+                    <!-- Cart Trigger Button with badge -->
+                    <button class="nav-action-btn cart-trigger-btn" title="View Shopping Bag">
+                        <i class="fa fa-shopping-bag" style="color:#F08080;"></i>
+                        <span class="nav-badge-count cart-count" style="display:none;">0</span>
+                    </button>
+
+                    <!-- User Account / Auth Dropdown -->
+                    <div id="navUserAuth" style="display:inline-block;">
+                        <a href="login.html" class="nav-action-btn" title="Sign In">
+                            <i class="fa fa-user"></i>
+                            <span class="hidden-xs" style="font-size:13px;font-family:'Arvo',serif;">Sign In</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Category Navigation Bar -->
+        <nav id="mainNav" class="navbar navbar-default navbar-custom" style="margin-bottom:0;padding:8px 0;border-radius:0;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbarCollapse">
+                        <span class="sr-only">Toggle navigation</span>Menu <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="mainNavbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li class="current-page-item"><a href="index.html">Home</a></li>
+                        <li><a href="special.html">Shop Flowers</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Occasions <span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-custom">
+                                <li><a href="special.html?occ=anniversary">Anniversary Flowers</a></li>
+                                <li><a href="special.html?occ=birthday">Birthday Flowers</a></li>
+                                <li><a href="special.html?occ=valentine">Valentine's Flowers</a></li>
+                                <li><a href="special.html?occ=wedding">Wedding Flowers</a></li>
+                                <li><a href="special.html?occ=congratulations">Congratulations</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-custom">
+                                <li><a href="special.html?cat=roses">Roses &amp; Romance</a></li>
+                                <li><a href="special.html?cat=bouquets">Flower Bouquets</a></li>
+                                <li><a href="special.html?cat=lilies">Lilies &amp; Luxury</a></li>
+                                <li><a href="special.html?cat=plants">Indoor Plants</a></li>
+                                <li><a href="special.html?cat=gifts">Gift Items &amp; Hampers</a></li>
+                                <li><a href="special.html?cat=specials">Today's Specials</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="testimonials.html">About &amp; Testimonials</a></li>
+                        <li><a href="delivery.html">Delivery Information</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Container -->
+    <main>
+        <div class="container">
+
+            <!-- Hero Banner with CTA -->
+            <div class="hero-premium-section">
+                <div class="row" style="align-items:center;">
+                    <div class="col-md-7 col-sm-12">
+                        <span class="hero-badge-pill"><i class="fa fa-sparkles"></i> Handcrafted Daily With Love</span>
+                        <h2 class="hero-title">Delivering Fresh Emotions, <span>One Petal</span> at a Time.</h2>
+                        <p class="hero-subtitle">
+                            Surprise your loved ones with breathtaking farm-fresh floral arrangements, designed by master florists with same-day express delivery.
+                        </p>
+                        <div style="display:flex;gap:15px;flex-wrap:wrap;">
+                            <a href="special.html" class="btn-cta-shop">
+                                <i class="fa fa-gift"></i> Shop Flowers
+                            </a>
+                            <a href="special.html?cat=specials" class="btn btn-default btn-lg" style="border-radius:30px;padding:14px 28px;font-family:'Arvo',serif;font-weight:700;">
+                                View Today's Specials
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-12 hidden-xs text-center">
+                        <img src="images/flower-vase1.png" alt="Happy Petals Bouquet" class="img-responsive" style="max-height:360px;display:inline-block;filter:drop-shadow(0 15px 25px rgba(0,0,0,0.15));" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popular Categories Grid -->
+            <div style="margin:30px 0;">
+                <div class="main-heading text-center">
+                    <h3 style="font-family:'Arvo',serif;font-size:28px;">Popular Flower Categories</h3>
+                    <p class="text-muted" style="font-size:15px;">Handpicked arrangements for life's most precious occasions</p>
+                    <hr>
+                </div>
+
+                <div class="category-card-grid">
+                    <!-- Category 1: Wedding Flowers -->
+                    <a href="special.html?occ=wedding" class="category-box-item">
+                        <div class="category-box-icon"><i class="fa fa-diamond"></i></div>
+                        <h4 class="category-box-title">Wedding Flowers</h4>
+                    </a>
+                    <!-- Category 2: Birthday Flowers -->
+                    <a href="special.html?occ=birthday" class="category-box-item">
+                        <div class="category-box-icon"><i class="fa fa-birthday-cake"></i></div>
+                        <h4 class="category-box-title">Birthday Flowers</h4>
+                    </a>
+                    <!-- Category 3: Anniversary Flowers -->
+                    <a href="special.html?occ=anniversary" class="category-box-item">
+                        <div class="category-box-icon"><i class="fa fa-heart"></i></div>
+                        <h4 class="category-box-title">Anniversary</h4>
+                    </a>
+                    <!-- Category 4: Valentine's Flowers -->
+                    <a href="special.html?occ=valentine" class="category-box-item">
+                        <div class="category-box-icon"><i class="fa fa-fire"></i></div>
+                        <h4 class="category-box-title">Valentine's</h4>
+                    </a>
+                    <!-- Category 5: Flower Bouquets -->
+                    <a href="special.html?cat=bouquets" class="category-box-item">
+                        <div class="category-box-icon"><i class="fa fa-sun-o"></i></div>
+                        <h4 class="category-box-title">Flower Bouquets</h4>
+                    </a>
+                    <!-- Category 6: Indoor Plants -->
+                    <a href="special.html?cat=plants" class="category-box-item">
+                        <div class="category-box-icon"><i class="fa fa-leaf"></i></div>
+                        <h4 class="category-box-title">Indoor Plants</h4>
+                    </a>
+                    <!-- Category 7: Gift Items -->
+                    <a href="special.html?cat=gifts" class="category-box-item">
+                        <div class="category-box-icon"><i class="fa fa-gift"></i></div>
+                        <h4 class="category-box-title">Gift Hampers</h4>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Featured Flowers Section -->
+            <div class="featured-products" style="margin-top:20px;">
+                <div class="main-heading text-center">
+                    <h2 style="font-family:'Arvo',serif;">Featured Floral Collections</h2>
+                    <p class="text-muted" style="font-size:16px;">Top rated floral arrangements freshly handcrafted for this season</p>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <!-- Featured Product 1 -->
+                    <div class="col-md-4 col-sm-6 products-detail" data-id="prod-1">
+                        <span class="product-badge">Popular</span>
+                        <button class="product-wishlist-btn" data-id="prod-1" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
+                        <a href="product.html?id=prod-1">
+                            <img src="images/featured1.png" class="img-responsive" alt="Blossoms in Pink" />
+                        </a>
+                        <h3><a href="product.html?id=prod-1">Blossoms in Pink</a></h3>
+                        <div class="product-rating">
+                            <i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i>
+                            <span class="rating-num">4.8 (34 reviews)</span>
+                        </div>
+                        <p>Delicate pink roses and carnations expressing elegance and fond admiration.</p>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                            <span class="price-tag" style="font-size:20px;color:#F08080;font-weight:bold;">Rs 1,099</span>
+                            <span style="text-decoration:line-through;color:#999;font-size:14px;">Rs 1,399</span>
+                            <span class="product-discount-pill">21% OFF</span>
+                        </div>
+                        <div class="product-actions-bar">
+                            <button class="btn btn-add-cart"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                            <a href="product.html?id=prod-1" class="btn btn-quick-view"><i class="fa fa-eye"></i> View</a>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 2 -->
+                    <div class="col-md-4 col-sm-6 products-detail" data-id="prod-2">
+                        <span class="product-badge" style="background:#2a9d8f;">Best Seller</span>
+                        <button class="product-wishlist-btn" data-id="prod-2" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
+                        <a href="product.html?id=prod-2">
+                            <img src="images/fea.png" class="img-responsive" alt="Bunch of Colours" />
+                        </a>
+                        <h3><a href="product.html?id=prod-2">Bunch of Colours</a></h3>
+                        <div class="product-rating">
+                            <i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i>
+                            <span class="rating-num">4.9 (52 reviews)</span>
+                        </div>
+                        <p>A vibrant symphony of mixed seasonal blossoms bringing bright cheer to celebrations.</p>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                            <span class="price-tag" style="font-size:20px;color:#F08080;font-weight:bold;">Rs 899</span>
+                            <span style="text-decoration:line-through;color:#999;font-size:14px;">Rs 1,199</span>
+                            <span class="product-discount-pill">25% OFF</span>
+                        </div>
+                        <div class="product-actions-bar">
+                            <button class="btn btn-add-cart"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                            <a href="product.html?id=prod-2" class="btn btn-quick-view"><i class="fa fa-eye"></i> View</a>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 3 -->
+                    <div class="col-md-4 col-sm-6 products-detail" data-id="prod-5">
+                        <span class="product-badge" style="background:#e63946;">Romantic</span>
+                        <button class="product-wishlist-btn" data-id="prod-5" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
+                        <a href="product.html?id=prod-5">
+                            <img src="images/fea2.jpg" class="img-responsive" alt="Bouquet of Love" />
+                        </a>
+                        <h3><a href="product.html?id=prod-5">Bouquet of Love</a></h3>
+                        <div class="product-rating">
+                            <i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i>
+                            <span class="rating-num">4.9 (89 reviews)</span>
+                        </div>
+                        <p>Classic crimson red roses wrapped in satin ribbon for timeless romance.</p>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                            <span class="price-tag" style="font-size:20px;color:#F08080;font-weight:bold;">Rs 1,899</span>
+                            <span style="text-decoration:line-through;color:#999;font-size:14px;">Rs 2,299</span>
+                            <span class="product-discount-pill">17% OFF</span>
+                        </div>
+                        <div class="product-actions-bar">
+                            <button class="btn btn-add-cart"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                            <a href="product.html?id=prod-5" class="btn btn-quick-view"><i class="fa fa-eye"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Sellers & New Arrivals Showcase -->
+            <div style="margin-top:40px;">
+                <div class="main-heading text-center">
+                    <h3 style="font-family:'Arvo',serif;font-size:28px;">Best Sellers &amp; New Arrivals</h3>
+                    <p class="text-muted">Fresh seasonal favorites trending this week</p>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <!-- Item 4: Today's Special -->
+                    <div class="col-md-4 col-sm-6 products-detail" data-id="prod-4">
+                        <span class="product-badge" style="background:#f39c12;">Today's Special</span>
+                        <button class="product-wishlist-btn" data-id="prod-4" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
+                        <a href="product.html?id=prod-4">
+                            <img src="images/fea4.png" class="img-responsive" alt="Colourful Spring" />
+                        </a>
+                        <h3><a href="product.html?id=prod-4">Colourful Spring</a></h3>
+                        <div class="product-rating">
+                            <i class="fa fa-star text-warning"></i> 5.0 (68 reviews)
+                        </div>
+                        <p>Uplifting floral centerpiece handpicked to transform any living space.</p>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                            <span class="price-tag" style="font-size:20px;color:#F08080;font-weight:bold;">Rs 1,250</span>
+                            <span style="text-decoration:line-through;color:#999;font-size:14px;">Rs 1,550</span>
+                        </div>
+                        <div class="product-actions-bar">
+                            <button class="btn btn-add-cart"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                            <a href="product.html?id=prod-4" class="btn btn-quick-view"><i class="fa fa-eye"></i> View</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Orchid Plant (New Arrival) -->
+                    <div class="col-md-4 col-sm-6 products-detail" data-id="prod-9">
+                        <span class="product-badge" style="background:#5B2C6F;">New Arrival</span>
+                        <button class="product-wishlist-btn" data-id="prod-9" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
+                        <a href="product.html?id=prod-9">
+                            <img src="images/main-image3.jpg" class="img-responsive" alt="Imperial Purple Orchid Bloom" />
+                        </a>
+                        <h3><a href="product.html?id=prod-9">Imperial Purple Orchid Bloom</a></h3>
+                        <div class="product-rating">
+                            <i class="fa fa-star text-warning"></i> 4.9 (46 reviews)
+                        </div>
+                        <p>Exotic purple dendrobium orchids paired with lush tropical greenery.</p>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                            <span class="price-tag" style="font-size:20px;color:#F08080;font-weight:bold;">Rs 1,599</span>
+                            <span style="text-decoration:line-through;color:#999;font-size:14px;">Rs 1,999</span>
+                        </div>
+                        <div class="product-actions-bar">
+                            <button class="btn btn-add-cart"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                            <a href="product.html?id=prod-9" class="btn btn-quick-view"><i class="fa fa-eye"></i> View</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: Deluxe Gift Basket (Special Offer) -->
+                    <div class="col-md-4 col-sm-6 products-detail" data-id="prod-12">
+                        <span class="product-badge" style="background:#2a9d8f;">Gift Hamper</span>
+                        <button class="product-wishlist-btn" data-id="prod-12" title="Save to Wishlist"><i class="fa fa-heart-o"></i></button>
+                        <a href="product.html?id=prod-12">
+                            <img src="images/flower-vase1.png" class="img-responsive" alt="Deluxe Florist Gift Basket" />
+                        </a>
+                        <h3><a href="product.html?id=prod-12">Deluxe Florist Gift Basket</a></h3>
+                        <div class="product-rating">
+                            <i class="fa fa-star text-warning"></i> 4.9 (61 reviews)
+                        </div>
+                        <p>Curated luxury gift hamper with ceramic vase, chocolates, and flowers.</p>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                            <span class="price-tag" style="font-size:20px;color:#F08080;font-weight:bold;">Rs 2,799</span>
+                            <span style="text-decoration:line-through;color:#999;font-size:14px;">Rs 3,499</span>
+                        </div>
+                        <div class="product-actions-bar">
+                            <button class="btn btn-add-cart"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                            <a href="product.html?id=prod-12" class="btn btn-quick-view"><i class="fa fa-eye"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Testimonials Section -->
+            <div style="margin-top:50px;">
+                <div class="main-heading text-center">
+                    <h3 style="font-family:'Arvo',serif;font-size:28px;">Loved by Thousands of Givers</h3>
+                    <p class="text-muted">Real stories from our happy floral customers</p>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="testimonial-card-premium">
+                            <div class="testimonial-avatar">A</div>
+                            <div class="testimonial-stars">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">"The roses arrived looking even more fresh than the photos! The midnight surprise delivery was perfectly on point."</p>
+                            <h4 class="testimonial-author">Ananya Sharma</h4>
+                            <span style="font-size:12px;color:#888;">Verified Customer, San Jose</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="testimonial-card-premium">
+                            <div class="testimonial-avatar" style="background:#e8f5e9;color:#2e7d32;">R</div>
+                            <div class="testimonial-stars">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">"Ordered the Anniversary Red Roses for my wife. The packaging was ultra-luxurious and the blooms lasted over a full week."</p>
+                            <h4 class="testimonial-author">Rohan Deshmukh</h4>
+                            <span style="font-size:12px;color:#888;">Verified Customer, California</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="testimonial-card-premium">
+                            <div class="testimonial-avatar" style="background:#e3f2fd;color:#1565c0;">P</div>
+                            <div class="testimonial-stars">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">"Their customer support is stellar and same-day delivery saved our mother's birthday! Highly recommended."</p>
+                            <h4 class="testimonial-author">Pooja Mathur</h4>
+                            <span style="font-size:12px;color:#888;">Verified Customer, San Francisco</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram / Social Gallery Section -->
+            <div style="margin-top:50px;">
+                <div class="main-heading text-center">
+                    <h3 style="font-family:'Arvo',serif;font-size:28px;"><i class="fa fa-instagram" style="color:#e63946;"></i> Follow @HappyPetalsOnInsta</h3>
+                    <p class="text-muted">Tag your moments with #HappyPetals to be featured on our floral wall</p>
+                    <hr>
+                </div>
+
+                <div class="insta-gallery-grid">
+                    <div class="insta-gallery-item">
+                        <img src="images/fea.png" alt="Insta Bloom 1" />
+                        <div class="insta-gallery-overlay"><i class="fa fa-heart"></i></div>
+                    </div>
+                    <div class="insta-gallery-item">
+                        <img src="images/fea2.jpg" alt="Insta Bloom 2" />
+                        <div class="insta-gallery-overlay"><i class="fa fa-heart"></i></div>
+                    </div>
+                    <div class="insta-gallery-item">
+                        <img src="images/fae3.jpg" alt="Insta Bloom 3" />
+                        <div class="insta-gallery-overlay"><i class="fa fa-heart"></i></div>
+                    </div>
+                    <div class="insta-gallery-item">
+                        <img src="images/fea4.png" alt="Insta Bloom 4" />
+                        <div class="insta-gallery-overlay"><i class="fa fa-heart"></i></div>
+                    </div>
+                    <div class="insta-gallery-item">
+                        <img src="images/fea5.png" alt="Insta Bloom 5" />
+                        <div class="insta-gallery-overlay"><i class="fa fa-heart"></i></div>
+                    </div>
+                    <div class="insta-gallery-item">
+                        <img src="images/featured3.png" alt="Insta Bloom 6" />
+                        <div class="insta-gallery-overlay"><i class="fa fa-heart"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Subscription Section -->
+            <div class="newsletter-card">
+                <h3>🌸 Get 15% Off Your Next Bouquet Order</h3>
+                <p style="font-size:16px;max-width:550px;margin:0 auto;">
+                    Subscribe to receive floral inspiration, secret seasonal promotions, and anniversary reminders.
+                </p>
+                <form class="newsletter-form-inline" onsubmit="event.preventDefault(); FlowerShop.showToast('Thank you for subscribing! Promo code PETAL15 sent to your email 💌', 'success'); this.reset();">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email address..." required />
+                    <button type="submit" class="btn-newsletter-sub">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Attractive Footer -->
+    <footer>
+        <div class="container clearfix">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 footer-column">
+                        <h3>Popular Collections</h3>
+                        <a href="special.html">Today's Specials</a><br/>
+                        <a href="special.html?cat=roses">Anniversary Roses</a><br/>
+                        <a href="special.html?cat=bouquets">Birthday Bouquets</a><br/>
+                        <a href="special.html?cat=plants">Indoor Plants</a><br/>
+                        <a href="special.html?cat=gifts">Luxury Gift Hampers</a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 footer-column">
+                        <h3>Customer Care</h3>
+                        <a href="account.html">My Account Dashboard</a><br/>
+                        <a href="account.html?tab=orders">Order History &amp; Tracking</a><br/>
+                        <a href="account.html?tab=wishlist">Saved Wishlist</a><br/>
+                        <a href="delivery.html">Delivery &amp; Care Policies</a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 footer-column">
+                        <h3>Information</h3>
+                        <a href="testimonials.html">About Happy Petals</a><br/>
+                        <a href="testimonials.html">Customer Reviews</a><br/>
+                        <a href="contact.html">Store Locations</a><br/>
+                        <a href="contact.html">Contact Florist Team</a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h3>Happy Petals</h3>
+                        <address>
+                            1234 Flower Avenue,<br/>San Jose, California.<br/>
+                            <span class="text-primary" style="font-size:16px;font-weight:bold;">Call 800-123-1234</span>
+                        </address>
+                        <p style="font-size:13px;color:#777;">Delivering smiles and fresh stems 7 days a week.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Happy Petals. Fresh flower delivery with care and elegance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/shop.js"></script>
+
+</body>
+</html>

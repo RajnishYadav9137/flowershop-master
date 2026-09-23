@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flower shop customer registration">
+    <title>Create Account - Happy Petals</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/flowershop.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body id="page-top" class="index">
+    <!-- Top Announcement Bar -->
+    <div class="header-top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 text-left">
+                    <span>🌸 Fresh Morning Farm Blooms | Same-Day &amp; Midnight Delivery Available</span>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <a href="delivery.html" style="margin-right:15px;"><i class="fa fa-truck"></i> Delivery Information</a>
+                    <a href="contact.html"><i class="fa fa-phone"></i> Hotline: 800-123-1234</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Header & Navigation Wrapper -->
+    <div class="site-header-wrapper" id="siteHeader">
+        <div class="container">
+            <div class="header-main-nav">
+                <!-- Brand Logo -->
+                <a href="index.html" class="brand-logo-wrap">
+                    <div class="brand-logo-icon">🌸</div>
+                    <div>
+                        <h1 class="brand-logo-text">Happy <span>Petals</span></h1>
+                        <span class="brand-tagline">Artisan Florist &amp; Gifts</span>
+                    </div>
+                </a>
+
+                <!-- Search Bar with Live Suggestions -->
+                <div class="header-search-bar hidden-xs">
+                    <form onsubmit="event.preventDefault(); FlowerShop.performSearch();">
+                        <input type="text" class="header-search-input" placeholder="Search roses, bouquets, lilies..." autocomplete="off" />
+                        <button type="submit" class="header-search-submit" title="Search">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                    <div class="search-dropdown"></div>
+                </div>
+
+                <!-- Navigation Quick Actions -->
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <a href="account.html?tab=wishlist" class="nav-action-btn" title="My Wishlist">
+                        <i class="fa fa-heart-o text-danger"></i>
+                        <span class="nav-badge-count wishlist-count" style="display:none;">0</span>
+                    </a>
+
+                    <button class="nav-action-btn cart-trigger-btn" title="View Shopping Bag">
+                        <i class="fa fa-shopping-bag" style="color:#F08080;"></i>
+                        <span class="nav-badge-count cart-count" style="display:none;">0</span>
+                    </button>
+
+                    <div id="navUserAuth" style="display:inline-block;">
+                        <a href="login.html" class="nav-action-btn" title="Sign In">
+                            <i class="fa fa-user"></i>
+                            <span class="hidden-xs" style="font-size:13px;font-family:'Arvo',serif;">Sign In</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Category Navigation Bar -->
+        <nav id="mainNav" class="navbar navbar-default navbar-custom" style="margin-bottom:0;padding:8px 0;border-radius:0;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbarCollapse">
+                        <span class="sr-only">Toggle navigation</span>Menu <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="mainNavbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="special.html">Shop Flowers</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Occasions <span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-custom">
+                                <li><a href="special.html?occ=anniversary">Anniversary Flowers</a></li>
+                                <li><a href="special.html?occ=birthday">Birthday Flowers</a></li>
+                                <li><a href="special.html?occ=valentine">Valentine's Flowers</a></li>
+                                <li><a href="special.html?occ=wedding">Wedding Flowers</a></li>
+                                <li><a href="special.html?occ=congratulations">Congratulations</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-custom">
+                                <li><a href="special.html?cat=roses">Roses &amp; Romance</a></li>
+                                <li><a href="special.html?cat=bouquets">Flower Bouquets</a></li>
+                                <li><a href="special.html?cat=lilies">Lilies &amp; Luxury</a></li>
+                                <li><a href="special.html?cat=plants">Indoor Plants</a></li>
+                                <li><a href="special.html?cat=gifts">Gift Items &amp; Hampers</a></li>
+                                <li><a href="special.html?cat=specials">Today's Specials</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="testimonials.html">About &amp; Testimonials</a></li>
+                        <li><a href="delivery.html">Delivery Information</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" style="margin-top:20px;margin-bottom:60px;">
+                    <div style="background:#fff;border:1px solid #eee;border-radius:10px;padding:35px 30px;box-shadow:0 8px 30px rgba(0,0,0,0.06);">
+                        <div class="text-center" style="margin-bottom:25px;">
+                            <div style="width:60px;height:60px;background:#ffe3e3;color:#F08080;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:12px;">
+                                <i class="fa fa-user-plus"></i>
+                            </div>
+                            <h2 style="font-family:'Arvo',serif;margin:0;">Join Happy Petals</h2>
+                            <p class="text-muted" style="margin-top:6px;font-size:14px;">Create an account to track deliveries, save addresses and enjoy exclusive member discounts.</p>
+                        </div>
+
+                        <form id="registrationForm">
+                            <div class="form-group">
+                                <label for="memName"><i class="fa fa-user"></i> Full Name</label>
+                                <input type="text" class="form-control input-lg" id="memName" placeholder="e.g. John Doe" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="membEmailid"><i class="fa fa-envelope-o"></i> Email Address</label>
+                                <input type="email" class="form-control input-lg" id="membEmailid" placeholder="name@example.com" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="membPhone"><i class="fa fa-phone"></i> Mobile Phone (Optional)</label>
+                                <input type="tel" class="form-control input-lg" id="membPhone" placeholder="+91 9876543210" />
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label for="membPassword"><i class="fa fa-key"></i> Password</label>
+                                    <input type="password" class="form-control input-lg" id="membPassword" placeholder="Min 6 characters" required minlength="4" />
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label for="membPassword2"><i class="fa fa-key"></i> Confirm Password</label>
+                                    <input type="password" class="form-control input-lg" id="membPassword2" placeholder="Repeat password" required minlength="4" />
+                                </div>
+                            </div>
+
+                            <div class="checkbox" style="margin:15px 0;">
+                                <label>
+                                    <input type="checkbox" required checked> I agree to Happy Petals <a href="javascript:void(0)" style="color:#F08080;">Terms of Service</a> and <a href="javascript:void(0)" style="color:#F08080;">Privacy Policy</a>.
+                                </label>
+                            </div>
+
+                            <div id="regMessage" style="margin:15px 0;"></div>
+
+                            <button type="submit" id="regBtn" class="btn btn-primary btn-block btn-lg" style="background:#F08080;border:none;font-weight:bold;">
+                                <i class="fa fa-check"></i> Create Your Account
+                            </button>
+                        </form>
+
+                        <hr style="margin:25px 0 20px;">
+                        <div class="text-center" style="font-size:14px;">
+                            <p>Already have an account? <a href="login.html" style="color:#F08080;font-weight:bold;">Sign in here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container clearfix">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-3 footer-column">
+                        <h3>Categories</h3>
+                        <a href="special.html">Specials</a><br/>
+                        <a href="special.html?cat=roses">Anniversary Roses</a><br/>
+                        <a href="special.html?cat=bouquets">Birthday Bouquets</a>
+                    </div>
+                    <div class="col-lg-3 footer-column">
+                        <h3>My account</h3>
+                        <a href="account.html">My Account</a><br/>
+                        <a href="account.html">My Orders</a><br/>
+                        <a href="account.html">My Wishlist</a>
+                    </div>
+                    <div class="col-lg-3 footer-column">
+                        <h3>Information</h3>
+                        <a href="special.html">Catalog</a><br/>
+                        <a href="delivery.html">Delivery Policy</a><br/>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                    <div class="col-lg-3">
+                        <h3>Happy Petals</h3>
+                        <address>
+                            1234 Flower Avenue,<br/>San Jose, California.<br/>
+                            <span class="text-primary">800-123-1234</span>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Happy Petals. Handcrafted bouquets delivered with love.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/shop.js"></script>
+    <script>
+        (function(){
+            const form = document.getElementById('registrationForm');
+            const msg = document.getElementById('regMessage');
+            const btn = document.getElementById('regBtn');
+
+            form.addEventListener('submit', async function(e){
+                e.preventDefault();
+                msg.innerHTML = '';
+
+                const name = document.getElementById('memName').value.trim();
+                const email = document.getElementById('membEmailid').value.trim();
+                const phone = document.getElementById('membPhone').value.trim();
+                const password = document.getElementById('membPassword').value;
+                const password2 = document.getElementById('membPassword2').value;
+
+                if (password !== password2) {
+                    msg.innerHTML = '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Passwords do not match!</div>';
+                    return;
+                }
+
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Creating Account...';
+
+                try {
+                    const res = await fetch('/api/register', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, phone, password })
+                    });
+                    const j = await res.json();
+                    if (res.ok && j && j.success) {
+                        msg.innerHTML = '<div class="alert alert-success"><i class="fa fa-check-circle"></i> Account created successfully! Logging you in...</div>';
+                        if (j.user) {
+                            FlowerShop.setUser(j.user);
+                        }
+                        setTimeout(() => {
+                            window.location.href = 'account.html';
+                        }, 800);
+                    } else {
+                        msg.innerHTML = `<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ${j.message || 'Registration failed'}</div>`;
+                        btn.disabled = false;
+                        btn.innerHTML = '<i class="fa fa-check"></i> Create Your Account';
+                    }
+                } catch (err) {
+                    console.error(err);
+                    msg.innerHTML = '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Network error during registration</div>';
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fa fa-check"></i> Create Your Account';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

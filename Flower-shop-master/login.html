@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sign In - Happy Petals</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="css/flowershop.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4" style="margin-top:50px">
+        <h2>Sign in</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" class="form-control" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" type="password" class="form-control" placeholder="Password" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+          <a href="registration.html" class="btn btn-link">Create account</a>
+        </form>
+        <div id="loginMessage" style="margin-top:15px"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const form = document.getElementById('loginForm');
+      const msg = document.getElementById('loginMessage');
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        msg.textContent = '';
+        const email = document.getElementById('loginEmail').value.trim();
+        const password = document.getElementById('loginPassword').value;
+        try {
+          const res = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+          });
+          const j = await res.json();
+          if (res.ok && j && j.success) {
+            msg.innerHTML = '<div class="alert alert-success">Signed in successfully</div>';
+            // Redirect to homepage or account page
+            setTimeout(() => { window.location.href = '/'; }, 800);
+          } else {
+            msg.innerHTML = '<div class="alert alert-danger">' + (j && j.message ? j.message : 'Sign in failed') + '</div>';
+          }
+        } catch (err) {
+          console.error(err);
+          msg.innerHTML = '<div class="alert alert-danger">Network error</div>';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sign In - Happy Petals</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="css/flowershop.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body id="page-top" class="index">
+  <!-- Top Announcement Bar -->
+  <div class="header-top-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 text-left">
+          <span>🌸 Fresh Morning Farm Blooms | Same-Day &amp; Midnight Delivery Available</span>
+        </div>
+        <div class="col-sm-6 text-right">
+          <a href="delivery.html" style="margin-right:15px;"><i class="fa fa-truck"></i> Delivery Information</a>
+          <a href="contact.html"><i class="fa fa-phone"></i> Hotline: 800-123-1234</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Header & Navigation Wrapper -->
+  <div class="site-header-wrapper" id="siteHeader">
+    <div class="container">
+      <div class="header-main-nav">
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo-wrap">
+          <div class="brand-logo-icon">🌸</div>
+          <div>
+            <h1 class="brand-logo-text">Happy <span>Petals</span></h1>
+            <span class="brand-tagline">Artisan Florist &amp; Gifts</span>
+          </div>
+        </a>
+
+        <!-- Search Bar with Live Suggestions -->
+        <div class="header-search-bar hidden-xs">
+          <form onsubmit="event.preventDefault(); FlowerShop.performSearch();">
+            <input type="text" class="header-search-input" placeholder="Search roses, bouquets, lilies..." autocomplete="off" />
+            <button type="submit" class="header-search-submit" title="Search">
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+          <div class="search-dropdown"></div>
+        </div>
+
+        <!-- Navigation Quick Actions -->
+        <div style="display:flex;align-items:center;gap:10px;">
+          <a href="account.html?tab=wishlist" class="nav-action-btn" title="My Wishlist">
+            <i class="fa fa-heart-o text-danger"></i>
+            <span class="nav-badge-count wishlist-count" style="display:none;">0</span>
+          </a>
+
+          <button class="nav-action-btn cart-trigger-btn" title="View Shopping Bag">
+            <i class="fa fa-shopping-bag" style="color:#F08080;"></i>
+            <span class="nav-badge-count cart-count" style="display:none;">0</span>
+          </button>
+
+          <div id="navUserAuth" style="display:inline-block;">
+            <a href="login.html" class="nav-action-btn" title="Sign In">
+              <i class="fa fa-user"></i>
+              <span class="hidden-xs" style="font-size:13px;font-family:'Arvo',serif;">Sign In</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Category Navigation Bar -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom" style="margin-bottom:0;padding:8px 0;border-radius:0;">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbarCollapse">
+            <span class="sr-only">Toggle navigation</span>Menu <i class="fa fa-bars"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="mainNavbarCollapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="special.html">Shop Flowers</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Occasions <span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown-custom">
+                <li><a href="special.html?occ=anniversary">Anniversary Flowers</a></li>
+                <li><a href="special.html?occ=birthday">Birthday Flowers</a></li>
+                <li><a href="special.html?occ=valentine">Valentine's Flowers</a></li>
+                <li><a href="special.html?occ=wedding">Wedding Flowers</a></li>
+                <li><a href="special.html?occ=congratulations">Congratulations</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown-custom">
+                <li><a href="special.html?cat=roses">Roses &amp; Romance</a></li>
+                <li><a href="special.html?cat=bouquets">Flower Bouquets</a></li>
+                <li><a href="special.html?cat=lilies">Lilies &amp; Luxury</a></li>
+                <li><a href="special.html?cat=plants">Indoor Plants</a></li>
+                <li><a href="special.html?cat=gifts">Gift Items &amp; Hampers</a></li>
+                <li><a href="special.html?cat=specials">Today's Specials</a></li>
+              </ul>
+            </li>
+            <li><a href="testimonials.html">About &amp; Testimonials</a></li>
+            <li><a href="delivery.html">Delivery Information</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-md-offset-3 col-sm-8 col-sm-offset-2" style="margin-top:25px;margin-bottom:60px;">
+          <div style="background:#fff;border:1px solid #eee;border-radius:10px;padding:35px 30px;box-shadow:0 8px 30px rgba(0,0,0,0.06);">
+            <div class="text-center" style="margin-bottom:25px;">
+              <div style="width:60px;height:60px;background:#ffe3e3;color:#F08080;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:12px;">
+                <i class="fa fa-lock"></i>
+              </div>
+              <h2 style="font-family:'Arvo',serif;margin:0;">Welcome Back</h2>
+              <p class="text-muted" style="margin-top:6px;font-size:14px;">Sign in to access your orders, saved addresses and flower wishlist</p>
+            </div>
+
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="loginEmail"><i class="fa fa-envelope-o"></i> Email Address</label>
+                <input id="loginEmail" type="email" class="form-control input-lg" placeholder="name@example.com" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+                  <label for="loginPassword" style="margin:0;"><i class="fa fa-key"></i> Password</label>
+                  <a href="javascript:void(0)" onclick="$('#forgotModal').modal('show')" style="font-size:12px;color:#F08080;font-weight:600;">Forgot Password?</a>
+                </div>
+                <input id="loginPassword" type="password" class="form-control input-lg" placeholder="Enter your password" required autocomplete="current-password" />
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="rememberMe" checked> Remember me on this device
+                </label>
+              </div>
+              <div id="loginMessage" style="margin:15px 0;"></div>
+              <button type="submit" id="loginBtn" class="btn btn-primary btn-block btn-lg" style="background:#F08080;border:none;font-weight:bold;">
+                <i class="fa fa-sign-in"></i> Sign In to Account
+              </button>
+            </form>
+
+            <hr style="margin:25px 0 20px;">
+            <div class="text-center" style="font-size:14px;">
+              <p>Don't have a Flower Shop account? <a href="registration.html" style="color:#F08080;font-weight:bold;">Create one now</a></p>
+              <p style="margin-top:8px;"><a href="special.html" class="text-muted"><i class="fa fa-arrow-left"></i> Continue shopping without signing in</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal fade" id="forgotModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content" style="border-radius:10px;overflow:hidden;">
+        <div class="modal-header" style="background:#fff0f0;border-bottom:1px solid #ffe3e3;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="font-family:'Arvo',serif;"><i class="fa fa-unlock-alt" style="color:#F08080;"></i> Reset Password</h4>
+        </div>
+        <div class="modal-body">
+          <div id="forgotStep1">
+            <p style="font-size:13px;color:#666;">Enter your registered email address to receive a secure password reset token.</p>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="forgotEmail" class="form-control" placeholder="name@example.com" required />
+            </div>
+            <div id="forgotAlert1"></div>
+            <button type="button" class="btn btn-primary btn-block" style="background:#F08080;border:none;" onclick="handleForgotPassword()">
+              Request Reset Token
+            </button>
+          </div>
+
+          <div id="forgotStep2" style="display:none;">
+            <div class="alert alert-info" style="font-size:12px;padding:8px 12px;">
+              <i class="fa fa-info-circle"></i> Reset token generated! Enter your new password below.
+            </div>
+            <div class="form-group">
+              <label>Reset Token</label>
+              <input type="text" id="resetTokenInput" class="form-control" placeholder="Reset token" required />
+            </div>
+            <div class="form-group">
+              <label>New Password</label>
+              <input type="password" id="resetNewPassword" class="form-control" placeholder="Min 6 characters" required />
+            </div>
+            <div id="forgotAlert2"></div>
+            <button type="button" class="btn btn-success btn-block" style="background:#2a9d8f;border:none;" onclick="handleResetPassword()">
+              Set New Password
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container clearfix">
+      <div class="footer-top">
+        <div class="row">
+          <div class="col-lg-3 footer-column">
+            <h3>Categories</h3>
+            <a href="special.html">Specials</a><br/>
+            <a href="special.html?cat=roses">Anniversary Roses</a><br/>
+            <a href="special.html?cat=bouquets">Birthday Bouquets</a>
+          </div>
+          <div class="col-lg-3 footer-column">
+            <h3>My account</h3>
+            <a href="account.html">My Account</a><br/>
+            <a href="account.html">My Orders</a><br/>
+            <a href="account.html">My Wishlist</a>
+          </div>
+          <div class="col-lg-3 footer-column">
+            <h3>Information</h3>
+            <a href="special.html">Catalog</a><br/>
+            <a href="delivery.html">Delivery Policy</a><br/>
+            <a href="contact.html">Contact Us</a>
+          </div>
+          <div class="col-lg-3">
+            <h3>Happy Petals</h3>
+            <address>
+              1234 Flower Avenue,<br/>San Jose, California.<br/>
+              <span class="text-primary">800-123-1234</span>
+            </address>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Happy Petals. Handcrafted bouquets delivered with love.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/shop.js"></script>
+  <script>
+    (function(){
+      const form = document.getElementById('loginForm');
+      const msg = document.getElementById('loginMessage');
+      const btn = document.getElementById('loginBtn');
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        msg.innerHTML = '';
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Signing in...';
+
+        const email = document.getElementById('loginEmail').value.trim();
+        const password = document.getElementById('loginPassword').value;
+
+        try {
+          const res = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+          });
+          const j = await res.json();
+          if (res.ok && j && j.success) {
+            msg.innerHTML = '<div class="alert alert-success"><i class="fa fa-check-circle"></i> Welcome back! Redirecting...</div>';
+            FlowerShop.setUser(j.user);
+            setTimeout(() => {
+              const urlParams = new URLSearchParams(window.location.search);
+              const returnUrl = urlParams.get('redirect') || 'account.html';
+              window.location.href = returnUrl;
+            }, 600);
+          } else {
+            msg.innerHTML = '<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + (j && j.message ? j.message : 'Invalid credentials') + '</div>';
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fa fa-sign-in"></i> Sign In to Account';
+          }
+        } catch (err) {
+          console.error(err);
+          msg.innerHTML = '<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Network connection error</div>';
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fa fa-sign-in"></i> Sign In to Account';
+        }
+      });
+    })();
+
+    async function handleForgotPassword() {
+      const email = $('#forgotEmail').val().trim();
+      const alertBox = $('#forgotAlert1');
+      if (!email) {
+        alertBox.html('<div class="alert alert-danger" style="padding:6px 10px;font-size:12px;">Please enter your email address.</div>');
+        return;
+      }
+      alertBox.html('<div class="text-muted" style="font-size:12px;"><i class="fa fa-spinner fa-spin"></i> Checking account...</div>');
+      try {
+        const res = await fetch('/api/forgot-password', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        const j = await res.json();
+        if (res.ok && j.success) {
+          if (j.resetToken) {
+            $('#resetTokenInput').val(j.resetToken);
+          }
+          $('#forgotStep1').hide();
+          $('#forgotStep2').show();
+        } else {
+          alertBox.html(`<div class="alert alert-danger" style="padding:6px 10px;font-size:12px;">${j.message || 'Email not found.'}</div>`);
+        }
+      } catch (err) {
+        alertBox.html('<div class="alert alert-danger" style="padding:6px 10px;font-size:12px;">Network error. Please try again.</div>');
+      }
+    }
+
+    async function handleResetPassword() {
+      const email = $('#forgotEmail').val().trim();
+      const token = $('#resetTokenInput').val().trim();
+      const newPassword = $('#resetNewPassword').val();
+      const alertBox = $('#forgotAlert2');
+
+      if (!token || !newPassword) {
+        alertBox.html('<div class="alert alert-danger" style="padding:6px 10px;font-size:12px;">Please provide both token and new password.</div>');
+        return;
+      }
+      if (newPassword.length < 4) {
+        alertBox.html('<div class="alert alert-danger" style="padding:6px 10px;font-size:12px;">Password must be at least 4 characters.</div>');
+        return;
+      }
+
+      alertBox.html('<div class="text-muted" style="font-size:12px;"><i class="fa fa-spinner fa-spin"></i> Updating password...</div>');
+      try {
+        const res = await fetch('/api/reset-password', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, token, newPassword })
+        });
+        const j = await res.json();
+        if (res.ok && j.success) {
+          alertBox.html('<div class="alert alert-success" style="padding:6px 10px;font-size:12px;"><i class="fa fa-check"></i> Password reset successful! You can now sign in.</div>');
+          setTimeout(() => {
+            $('#forgotModal').modal('hide');
+            $('#loginEmail').val(email);
+            $('#loginPassword').val(newPassword);
+            FlowerShop.showToast('Password updated successfully! Please sign in.', 'success');
+          }, 1200);
+        } else {
+          alertBox.html(`<div class="alert alert-danger" style="padding:6px 10px;font-size:12px;">${j.message || 'Failed to reset password.'}</div>`);
+        }
+      } catch (e) {
+        alertBox.html('<div class="alert alert-danger" style="padding:6px 10px;font-size:12px;">Network connection error.</div>');
+      }
+    }
+
+    $(document).ready(function() {
+      $('#forgotModal').on('show.bs.modal', function () {
+        $('#forgotStep1').show();
+        $('#forgotStep2').hide();
+        $('#forgotAlert1').empty();
+        $('#forgotAlert2').empty();
+        const typedEmail = $('#loginEmail').val().trim();
+        if (typedEmail) {
+          $('#forgotEmail').val(typedEmail);
+        }
+        $('#resetTokenInput').val('');
+        $('#resetNewPassword').val('');
+      });
+    });
+  </script>
+</body>
+</html>

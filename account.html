@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flower shop user account dashboard">
+    <title>My Account - Happy Petals</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/flowershop.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="page-top" class="index">
+    <!-- Top Announcement Bar -->
+    <div class="header-top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 text-left">
+                    <span>🌸 Fresh Morning Farm Blooms | Same-Day &amp; Midnight Delivery Available</span>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <a href="delivery.html" style="margin-right:15px;"><i class="fa fa-truck"></i> Delivery Information</a>
+                    <a href="contact.html"><i class="fa fa-phone"></i> Hotline: 800-123-1234</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Header & Navigation Wrapper -->
+    <div class="site-header-wrapper" id="siteHeader">
+        <div class="container">
+            <div class="header-main-nav">
+                <!-- Brand Logo -->
+                <a href="index.html" class="brand-logo-wrap">
+                    <div class="brand-logo-icon">🌸</div>
+                    <div>
+                        <h1 class="brand-logo-text">Happy <span>Petals</span></h1>
+                        <span class="brand-tagline">Artisan Florist &amp; Gifts</span>
+                    </div>
+                </a>
+
+                <!-- Search Bar with Live Suggestions -->
+                <div class="header-search-bar hidden-xs">
+                    <form onsubmit="event.preventDefault(); FlowerShop.performSearch();">
+                        <input type="text" class="header-search-input" placeholder="Search roses, bouquets, lilies..." autocomplete="off" />
+                        <button type="submit" class="header-search-submit" title="Search">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                    <div class="search-dropdown"></div>
+                </div>
+
+                <!-- Navigation Quick Actions -->
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <a href="account.html?tab=wishlist" class="nav-action-btn" title="My Wishlist">
+                        <i class="fa fa-heart-o text-danger"></i>
+                        <span class="nav-badge-count wishlist-count" style="display:none;">0</span>
+                    </a>
+
+                    <button class="nav-action-btn cart-trigger-btn" title="View Shopping Bag">
+                        <i class="fa fa-shopping-bag" style="color:#F08080;"></i>
+                        <span class="nav-badge-count cart-count" style="display:none;">0</span>
+                    </button>
+
+                    <div id="navUserAuth" style="display:inline-block;">
+                        <a href="login.html" class="nav-action-btn" title="Sign In">
+                            <i class="fa fa-user"></i>
+                            <span class="hidden-xs" style="font-size:13px;font-family:'Arvo',serif;">Sign In</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Category Navigation Bar -->
+        <nav id="mainNav" class="navbar navbar-default navbar-custom" style="margin-bottom:0;padding:8px 0;border-radius:0;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbarCollapse">
+                        <span class="sr-only">Toggle navigation</span>Menu <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="mainNavbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="special.html">Shop Flowers</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Occasions <span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-custom">
+                                <li><a href="special.html?occ=anniversary">Anniversary Flowers</a></li>
+                                <li><a href="special.html?occ=birthday">Birthday Flowers</a></li>
+                                <li><a href="special.html?occ=valentine">Valentine's Flowers</a></li>
+                                <li><a href="special.html?occ=wedding">Wedding Flowers</a></li>
+                                <li><a href="special.html?occ=congratulations">Congratulations</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-custom">
+                                <li><a href="special.html?cat=roses">Roses &amp; Romance</a></li>
+                                <li><a href="special.html?cat=bouquets">Flower Bouquets</a></li>
+                                <li><a href="special.html?cat=lilies">Lilies &amp; Luxury</a></li>
+                                <li><a href="special.html?cat=plants">Indoor Plants</a></li>
+                                <li><a href="special.html?cat=gifts">Gift Items &amp; Hampers</a></li>
+                                <li><a href="special.html?cat=specials">Today's Specials</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="testimonials.html">About &amp; Testimonials</a></li>
+                        <li><a href="delivery.html">Delivery Information</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li class="current-page-item"><a href="account.html"><i class="fa fa-user"></i> My Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <div class="container account-wrapper">
+            <div class="sub-nav">
+                <h3><a href="account.html">My Account Dashboard</a></h3>
+                <ol class="breadcrumb breadcrumb-custom">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">My Account</li>
+                </ol>
+            </div>
+
+            <!-- Logged out prompt (if not authenticated) -->
+            <div id="unauthAlert" class="alert alert-warning" style="display:none;margin-top:20px;">
+                <h4><i class="fa fa-exclamation-triangle"></i> You are not signed in!</h4>
+                <p>Please sign in to view your profile, order history, and saved addresses, or create a free account.</p>
+                <div style="margin-top:15px;">
+                    <a href="login.html" class="btn btn-primary" style="background:#F08080;border:none;">Sign In</a>
+                    <a href="registration.html" class="btn btn-default" style="margin-left:8px;">Create Account</a>
+                </div>
+            </div>
+
+            <!-- Authenticated Account Container -->
+            <div id="accountDashboardContent" class="row" style="margin-top:25px;">
+                <!-- Sidebar Navigation -->
+                <div class="col-md-3 col-sm-4">
+                    <div class="account-sidebar">
+                        <div class="account-user-card">
+                            <div class="account-user-avatar" id="avatarInitial">U</div>
+                            <h4 id="sidebarUserName" style="margin:5px 0 2px;font-family:'Arvo',serif;">User Name</h4>
+                            <p id="sidebarUserEmail" style="color:#777;font-size:13px;margin:0;">user@example.com</p>
+                            <span class="badge" style="background:#2a9d8f;margin-top:8px;">VIP Flower Club</span>
+                        </div>
+
+                        <ul class="account-nav-list">
+                            <li class="account-nav-item">
+                                <a class="account-nav-link active" data-tab="overview">
+                                    <i class="fa fa-dashboard"></i> Overview
+                                </a>
+                            </li>
+                            <li class="account-nav-item">
+                                <a class="account-nav-link" data-tab="orders">
+                                    <i class="fa fa-shopping-bag"></i> My Orders
+                                    <span id="ordersCountBadge" class="badge pull-right" style="background:#F08080;">0</span>
+                                </a>
+                            </li>
+                            <li class="account-nav-item">
+                                <a class="account-nav-link" data-tab="profile">
+                                    <i class="fa fa-id-card-o"></i> Profile & Password
+                                </a>
+                            </li>
+                            <li class="account-nav-item">
+                                <a class="account-nav-link" data-tab="addresses">
+                                    <i class="fa fa-map-marker"></i> Saved Addresses
+                                </a>
+                            </li>
+                            <li class="account-nav-item">
+                                <a class="account-nav-link" data-tab="wishlist">
+                                    <i class="fa fa-heart"></i> My Wishlist
+                                    <span id="wishlistCountBadge" class="badge pull-right" style="background:#e63946;">0</span>
+                                </a>
+                            </li>
+                            <li class="account-nav-item" style="border-top:1px solid #f0f0f0;margin-top:10px;padding-top:10px;">
+                                <a class="account-nav-link text-danger" href="javascript:void(0)" onclick="FlowerShop.logout()">
+                                    <i class="fa fa-sign-out"></i> Sign Out
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Main Content Area -->
+                <div class="col-md-9 col-sm-8">
+                    <div class="account-content-card">
+                        
+                        <!-- TAB 1: OVERVIEW -->
+                        <div id="tab-overview" class="account-tab-pane">
+                            <h3 style="font-family:'Arvo',serif;margin-top:0;">Welcome back, <span id="welcomeName">Member</span>! 💐</h3>
+                            <p class="text-muted">Manage your flower orders, personal details, delivery preferences and favorite bouquets from your central dashboard.</p>
+                            
+                            <div class="account-stat-grid" style="margin-top:20px;">
+                                <div class="stat-box">
+                                    <h4 id="statTotalOrders">0</h4>
+                                    <p>Total Orders Placed</p>
+                                </div>
+                                <div class="stat-box">
+                                    <h4 id="statTotalSpent">Rs 0</h4>
+                                    <p>Total Floral Spending</p>
+                                </div>
+                                <div class="stat-box">
+                                    <h4 id="statWishlist">0</h4>
+                                    <p>Favourited Bouquets</p>
+                                </div>
+                                <div class="stat-box">
+                                    <h4 style="color:#2a9d8f;">Active</h4>
+                                    <p>Membership Status</p>
+                                </div>
+                            </div>
+
+                            <div style="margin-top:25px;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                                    <h4 style="font-family:'Arvo',serif;margin:0;">Recent Orders</h4>
+                                    <button class="btn btn-xs btn-link" onclick="switchAccountTab('orders')">View all orders &rarr;</button>
+                                </div>
+                                <div id="recentOrdersContainer">
+                                    <p class="text-muted">Loading your orders...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 2: MY ORDERS -->
+                        <div id="tab-orders" class="account-tab-pane" style="display:none;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+                                <h3 style="font-family:'Arvo',serif;margin:0;"><i class="fa fa-shopping-bag" style="color:#F08080;"></i> My Order History</h3>
+                                <a href="special.html" class="btn btn-sm btn-primary" style="background:#F08080;border:none;">Order Flowers Now</a>
+                            </div>
+                            <div id="allOrdersContainer">
+                                <!-- Rendered dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- TAB 3: PROFILE SETTINGS -->
+                        <div id="tab-profile" class="account-tab-pane" style="display:none;">
+                            <h3 style="font-family:'Arvo',serif;margin-top:0;"><i class="fa fa-user" style="color:#F08080;"></i> Profile Settings</h3>
+                            <p class="text-muted">Update your contact details and secure your account.</p>
+                            <hr/>
+                            <form id="profileForm" style="max-width:550px;">
+                                <div class="form-group">
+                                    <label for="profName">Full Name</label>
+                                    <input type="text" id="profName" class="form-control" placeholder="Your full name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="profEmail">Email Address</label>
+                                    <input type="email" id="profEmail" class="form-control" readonly style="background:#f8f9fa;cursor:not-allowed;" />
+                                    <small class="text-muted">Email cannot be changed directly.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profPhone">Mobile Number</label>
+                                    <input type="tel" id="profPhone" class="form-control" placeholder="+91 9876543210" />
+                                </div>
+                                <hr/>
+                                <h4>Change Password</h4>
+                                <div class="form-group">
+                                    <label for="profNewPassword">New Password (leave blank to keep current)</label>
+                                    <input type="password" id="profNewPassword" class="form-control" placeholder="Enter new password" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="profConfirmPassword">Confirm New Password</label>
+                                    <input type="password" id="profConfirmPassword" class="form-control" placeholder="Repeat new password" />
+                                </div>
+                                <div id="profileAlert" style="margin-bottom:12px;"></div>
+                                <button type="submit" class="btn btn-primary" style="background:#F08080;border:none;padding:10px 24px;">
+                                    <i class="fa fa-save"></i> Save Profile Changes
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- TAB 4: SAVED ADDRESSES -->
+                        <div id="tab-addresses" class="account-tab-pane" style="display:none;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;">
+                                <h3 style="font-family:'Arvo',serif;margin:0;"><i class="fa fa-map-marker" style="color:#F08080;"></i> Saved Delivery Addresses</h3>
+                                <button id="btnOpenAddAddress" class="btn btn-sm btn-primary" style="background:#F08080;border:none;">
+                                    <i class="fa fa-plus"></i> Add New Address
+                                </button>
+                            </div>
+                            <p class="text-muted">Saved addresses allow 1-click checkout for quick flower deliveries.</p>
+                            
+                            <!-- Address Form Toggle -->
+                            <div id="addressFormBox" style="display:none;background:#fafafa;border:1px solid #eee;border-radius:6px;padding:20px;margin-bottom:20px;">
+                                <h4 style="margin-top:0;" id="addressFormTitle">Add Delivery Address</h4>
+                                <form id="newAddressForm">
+                                    <div class="row">
+                                        <div class="col-md-6 form-group">
+                                            <label>Label (e.g. Home, Office, Parents)</label>
+                                            <input type="text" id="addrLabel" class="form-control" placeholder="Home" required />
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <label>Recipient Name</label>
+                                            <input type="text" id="addrRecipient" class="form-control" placeholder="Recipient's Name" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Street Address</label>
+                                        <input type="text" id="addrStreet" class="form-control" placeholder="Flat / House No., Street, Landmark" required />
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 form-group">
+                                            <label>City</label>
+                                            <input type="text" id="addrCity" class="form-control" placeholder="City" required />
+                                        </div>
+                                        <div class="col-md-4 form-group">
+                                            <label>State</label>
+                                            <input type="text" id="addrState" class="form-control" placeholder="State" required />
+                                        </div>
+                                        <div class="col-md-4 form-group">
+                                            <label>Postal / PIN Code</label>
+                                            <input type="text" id="addrZip" class="form-control" placeholder="ZIP Code" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Contact Phone</label>
+                                        <input type="tel" id="addrPhone" class="form-control" placeholder="Phone number for courier" required />
+                                    </div>
+                                    <button type="submit" class="btn btn-success" style="background:#2a9d8f;border:none;"><i class="fa fa-save"></i> <span id="btnSaveAddrText">Save Address</span></button>
+                                    <button type="button" id="btnCancelAddress" class="btn btn-default" style="margin-left:8px;">Cancel</button>
+                                </form>
+                            </div>
+
+                            <div id="savedAddressesList" class="row">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- TAB 5: WISHLIST -->
+                        <div id="tab-wishlist" class="account-tab-pane" style="display:none;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;">
+                                <h3 style="font-family:'Arvo',serif;margin:0;"><i class="fa fa-heart" style="color:#e63946;"></i> My Favourites & Wishlist</h3>
+                                <button class="btn btn-sm btn-default" onclick="clearFullWishlist()"><i class="fa fa-trash-o"></i> Clear Wishlist</button>
+                            </div>
+                            <div id="wishlistGrid" class="row">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container clearfix">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-3 footer-column">
+                        <h3>Categories</h3>
+                        <a href="special.html">Specials</a><br/>
+                        <a href="special.html?cat=roses">Anniversary Roses</a><br/>
+                        <a href="special.html?cat=bouquets">Birthdays Bouquets</a><br/>
+                        <a href="special.html?cat=lilies">Congratulations</a>
+                    </div>
+                    <div class="col-lg-3 footer-column">
+                        <h3>My account</h3>
+                        <a href="account.html">My Account</a><br/>
+                        <a href="account.html">My Orders</a><br/>
+                        <a href="account.html">My Favourites</a><br/>
+                        <a href="account.html">My Address</a>
+                    </div>
+                    <div class="col-lg-3 footer-column">
+                        <h3>Information</h3>
+                        <a href="special.html">Specials</a><br/>
+                        <a href="delivery.html">Delivery Policy</a><br/>
+                        <a href="contact.html">Contact Us</a><br/>
+                    </div>
+                    <div class="col-lg-3">
+                        <h3>Company Address</h3>
+                        <address>
+                            Happy Petals.com<br/>1234, flowers avenue,<br/>San Jose, California.
+                            <p class="text-primary">Call 800-123-1234</p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Happy Petals. Fresh handpicked floral delivery worldwide.</p>
+            </div>
+            <hr>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/shop.js"></script>
+    <script>
+        let currentUser = null;
+        let userOrders = [];
+
+        function switchAccountTab(tabId) {
+            $('.account-tab-pane').hide();
+            $('#tab-' + tabId).fadeIn(200);
+            $('.account-nav-link').removeClass('active');
+            $(`[data-tab="${tabId}"]`).addClass('active');
+
+            if (tabId === 'orders') renderOrdersList();
+            if (tabId === 'wishlist') renderWishlistGrid();
+            if (tabId === 'addresses') renderSavedAddresses();
+        }
+
+        async function initAccountPage() {
+            currentUser = FlowerShop.getUser();
+
+            if (!currentUser) {
+                $('#unauthAlert').show();
+                $('#accountDashboardContent').hide();
+                return;
+            }
+
+            $('#unauthAlert').hide();
+            $('#accountDashboardContent').show();
+
+            // Populate user card
+            const initial = (currentUser.name || 'U').charAt(0).toUpperCase();
+            $('#avatarInitial').text(initial);
+            $('#sidebarUserName').text(currentUser.name || 'Customer');
+            $('#welcomeName').text(currentUser.name || 'Customer');
+            $('#sidebarUserEmail').text(currentUser.email);
+
+            // Populate form fields
+            $('#profName').val(currentUser.name || '');
+            $('#profEmail').val(currentUser.email);
+            $('#profPhone').val(currentUser.phone || '');
+
+            // Attach tab clicks
+            $('.account-nav-link[data-tab]').click(function(e) {
+                e.preventDefault();
+                const tab = $(this).attr('data-tab');
+                switchAccountTab(tab);
+            });
+
+            // Fetch live profile from backend to ensure freshness
+            try {
+                const res = await fetch(`/api/user/profile?email=${encodeURIComponent(currentUser.email)}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data.user) {
+                        currentUser = { ...currentUser, ...data.user };
+                        FlowerShop.setUser(currentUser);
+                        const initial = (currentUser.name || 'U').charAt(0).toUpperCase();
+                        $('#avatarInitial').text(initial);
+                        $('#sidebarUserName').text(currentUser.name || 'Customer');
+                        $('#welcomeName').text(currentUser.name || 'Customer');
+                        $('#profName').val(currentUser.name || '');
+                        $('#profPhone').val(currentUser.phone || '');
+                        renderSavedAddresses();
+                    }
+                }
+            } catch (err) {
+                console.warn('Backend profile fetch failed, using stored local session', err);
+            }
+
+            // Fetch user orders
+            await loadUserOrders();
+            renderWishlistGrid();
+            renderSavedAddresses();
+
+            // Check URL param tab (e.g. account.html?tab=wishlist)
+            const urlParams = new URLSearchParams(window.location.search);
+            const activeTab = urlParams.get('tab');
+            if (activeTab && ['overview', 'orders', 'profile', 'addresses', 'wishlist'].includes(activeTab)) {
+                switchAccountTab(activeTab);
+            }
+        }
+
+        async function loadUserOrders() {
+            try {
+                const res = await fetch(`/api/user/orders?email=${encodeURIComponent(currentUser.email)}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    userOrders = data.orders || [];
+                }
+            } catch (e) {
+                console.warn('Failed to load user orders', e);
+                userOrders = [];
+            }
+
+            // Stats
+            $('#statTotalOrders').text(userOrders.length);
+            $('#ordersCountBadge').text(userOrders.length);
+            const totalSpent = userOrders.reduce((s, o) => s + (Number(o.total) || 0), 0);
+            $('#statTotalSpent').text('Rs ' + totalSpent.toLocaleString());
+
+            const wishlist = FlowerShop.getWishlist();
+            $('#statWishlist').text(wishlist.length);
+            $('#wishlistCountBadge').text(wishlist.length);
+
+            renderRecentOrders();
+        }
+
+        function renderRecentOrders() {
+            const container = $('#recentOrdersContainer');
+            if (userOrders.length === 0) {
+                container.html(`
+                    <div style="background:#fafafa;border:1px dashed #ddd;border-radius:6px;padding:24px;text-align:center;">
+                        <i class="fa fa-shopping-basket" style="font-size:32px;color:#ccc;margin-bottom:8px;"></i>
+                        <p style="margin:0;color:#777;">You haven't placed any flower orders yet.</p>
+                        <a href="special.html" class="btn btn-sm btn-primary" style="background:#F08080;border:none;margin-top:10px;">Browse Today's Specials</a>
+                    </div>
+                `);
+                return;
+            }
+
+            const recents = userOrders.slice(0, 2);
+            let html = '';
+            recents.forEach(order => {
+                html += renderOrderCardHtml(order);
+            });
+            container.html(html);
+        }
+
+        function renderOrdersList() {
+            const container = $('#allOrdersContainer');
+            if (userOrders.length === 0) {
+                container.html(`
+                    <div style="text-align:center;padding:40px 20px;">
+                        <i class="fa fa-gift" style="font-size:48px;color:#ddd;margin-bottom:12px;"></i>
+                        <h4>No orders found</h4>
+                        <p class="text-muted">Send fresh blooms to someone special today.</p>
+                        <a href="special.html" class="btn btn-primary" style="background:#F08080;border:none;">Shop Flowers</a>
+                    </div>
+                `);
+                return;
+            }
+
+            let html = '';
+            userOrders.forEach(order => {
+                html += renderOrderCardHtml(order);
+            });
+            container.html(html);
+        }
+
+        function renderOrderCardHtml(order) {
+            const dateStr = new Date(order.createdAt).toLocaleDateString('en-US', {
+                year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+            });
+
+            const statusClass = order.status === 'Delivered' ? 'status-delivered' :
+                               order.status === 'Shipped' ? 'status-shipped' : 'status-confirmed';
+
+            let itemsHtml = '';
+            if (Array.isArray(order.items)) {
+                order.items.forEach(it => {
+                    itemsHtml += `
+                        <div class="order-item-row">
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <img src="${it.image || 'images/featured1.png'}" style="width:45px;height:45px;border-radius:4px;object-fit:cover;" onerror="this.src='images/featured1.png'" />
+                                <div>
+                                    <strong style="font-size:14px;">${it.name}</strong>
+                                    <div style="color:#777;font-size:12px;">Qty: ${it.qty} &times; Rs ${(Number(it.price) || 0).toLocaleString()}</div>
+                                </div>
+                            </div>
+                            <strong style="color:#F08080;">Rs ${((Number(it.price) || 0) * (Number(it.qty) || 1)).toLocaleString()}</strong>
+                        </div>
+                    `;
+                });
+            }
+
+            const safeOrderId = String(order.orderNumber || order._id || '').replace(/'/g, "\\'");
+
+            return `
+                <div class="order-history-card">
+                    <div class="order-header">
+                        <div>
+                            <strong>Order #${order.orderNumber || order._id}</strong>
+                            <span class="text-muted" style="margin-left:10px;"><i class="fa fa-calendar"></i> ${dateStr}</span>
+                        </div>
+                        <div>
+                            <span class="order-status-badge ${statusClass}"><i class="fa fa-check-circle"></i> ${order.status || 'Confirmed'}</span>
+                        </div>
+                    </div>
+                    <div class="order-body">
+                        ${itemsHtml}
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:10px;border-top:1px solid #eee;">
+                            <div>
+                                <small class="text-muted">Delivery Slot: <strong>${order.deliveryTimeSlot || 'Standard Delivery'}</strong></small>
+                                ${order.giftMessage ? `<div style="font-size:12px;color:#555;margin-top:4px;"><em>Gift Message: "${order.giftMessage}"</em></div>` : ''}
+                            </div>
+                            <div style="text-align:right;">
+                                <div style="font-size:16px;font-weight:bold;">Total: <span style="color:#F08080;">Rs ${(Number(order.total) || 0).toLocaleString()}</span></div>
+                                <button class="btn btn-xs btn-default" style="margin-top:6px;" onclick="reorderOrderByNumber('${safeOrderId}')">
+                                    <i class="fa fa-refresh"></i> Reorder All
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function reorderOrderByNumber(orderNumber) {
+            const order = userOrders.find(o => (o.orderNumber === orderNumber || o._id === orderNumber));
+            if (order && Array.isArray(order.items)) {
+                order.items.forEach(it => {
+                    FlowerShop.addToCart(it, it.qty || 1, false);
+                });
+                FlowerShop.showToast('All items added back to your cart! 🛍️', 'success');
+                FlowerShop.openCartDrawer();
+            }
+        }
+
+        // Profile Update Handler
+        $('#profileForm').submit(async function(e) {
+            e.preventDefault();
+            const name = $('#profName').val().trim();
+            const phone = $('#profPhone').val().trim();
+            const newPwd = $('#profNewPassword').val();
+            const confirmPwd = $('#profConfirmPassword').val();
+
+            if (newPwd) {
+                if (newPwd.length < 4) {
+                    $('#profileAlert').html('<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> New password must be at least 4 characters long!</div>');
+                    return;
+                }
+                if (newPwd !== confirmPwd) {
+                    $('#profileAlert').html('<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Passwords do not match!</div>');
+                    return;
+                }
+            }
+
+            try {
+                const res = await fetch('/api/user/profile', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: currentUser.email,
+                        name,
+                        phone,
+                        password: newPwd || undefined
+                    })
+                });
+                const j = await res.json();
+                if (res.ok && j && j.success) {
+                    const successMsg = newPwd ? 'Profile and password updated successfully!' : 'Profile updated successfully!';
+                    $('#profileAlert').html(`<div class="alert alert-success"><i class="fa fa-check-circle"></i> ${successMsg}</div>`);
+                    currentUser.name = name;
+                    currentUser.phone = phone;
+                    FlowerShop.setUser(currentUser);
+                    const initial = (name || 'U').charAt(0).toUpperCase();
+                    $('#avatarInitial').text(initial);
+                    $('#sidebarUserName').text(name);
+                    $('#welcomeName').text(name);
+                    $('#profNewPassword').val('');
+                    $('#profConfirmPassword').val('');
+                } else {
+                    $('#profileAlert').html(`<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ${j.message || 'Failed to update'}</div>`);
+                }
+            } catch (err) {
+                $('#profileAlert').html('<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Network error saving profile</div>');
+            }
+        });
+
+        // Saved Addresses
+        let editingAddrIndex = null;
+
+        function renderSavedAddresses() {
+            const list = currentUser.addresses || [];
+            const container = $('#savedAddressesList');
+            if (list.length === 0) {
+                container.html(`
+                    <div class="col-md-12 text-center" style="padding:30px;color:#888;">
+                        <p>No saved addresses yet. Click "+ Add New Address" above to save one for quick checkout.</p>
+                    </div>
+                `);
+                return;
+            }
+
+            let html = '';
+            list.forEach((addr, idx) => {
+                html += `
+                    <div class="col-md-6" style="margin-bottom:15px;">
+                        <div style="border:1px solid #e2e8f0;border-radius:6px;padding:16px;background:#fff;position:relative;box-shadow:0 2px 5px rgba(0,0,0,0.03);">
+                            <span class="badge" style="background:#F08080;">${addr.label || 'Home'}</span>
+                            <h4 style="margin:8px 0 4px 0;font-weight:600;">${addr.recipient}</h4>
+                            <p style="margin:0;font-size:13px;color:#555;">${addr.street}, ${addr.city}, ${addr.state} - ${addr.zip}</p>
+                            <p style="margin:4px 0 0 0;font-size:13px;color:#777;"><i class="fa fa-phone"></i> ${addr.phone}</p>
+                            <div style="position:absolute;top:14px;right:14px;display:flex;gap:6px;">
+                                <button class="btn btn-xs btn-default" onclick="editAddress(${idx})" title="Edit"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-xs btn-danger" onclick="deleteAddress(${idx})" title="Delete"><i class="fa fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            container.html(html);
+        }
+
+        $('#btnOpenAddAddress').click(() => {
+            editingAddrIndex = null;
+            $('#newAddressForm')[0].reset();
+            $('#addressFormTitle').text('Add Delivery Address');
+            $('#btnSaveAddrText').text('Save Address');
+            $('#addressFormBox').slideToggle();
+        });
+
+        $('#btnCancelAddress').click(() => {
+            editingAddrIndex = null;
+            $('#addressFormBox').slideUp();
+        });
+
+        function editAddress(idx) {
+            const list = currentUser.addresses || [];
+            const addr = list[idx];
+            if (!addr) return;
+            editingAddrIndex = idx;
+            $('#addrLabel').val(addr.label || '');
+            $('#addrRecipient').val(addr.recipient || '');
+            $('#addrStreet').val(addr.street || '');
+            $('#addrCity').val(addr.city || '');
+            $('#addrState').val(addr.state || '');
+            $('#addrZip').val(addr.zip || '');
+            $('#addrPhone').val(addr.phone || '');
+            $('#addressFormTitle').text('Edit Delivery Address');
+            $('#btnSaveAddrText').text('Update Address');
+            $('#addressFormBox').slideDown();
+        }
+
+        $('#newAddressForm').submit(async function(e) {
+            e.preventDefault();
+            const addrData = {
+                label: $('#addrLabel').val().trim(),
+                recipient: $('#addrRecipient').val().trim(),
+                street: $('#addrStreet').val().trim(),
+                city: $('#addrCity').val().trim(),
+                state: $('#addrState').val().trim(),
+                zip: $('#addrZip').val().trim(),
+                phone: $('#addrPhone').val().trim()
+            };
+
+            const addresses = currentUser.addresses || [];
+            if (editingAddrIndex !== null && editingAddrIndex >= 0 && editingAddrIndex < addresses.length) {
+                addresses[editingAddrIndex] = addrData;
+            } else {
+                addresses.push(addrData);
+            }
+            currentUser.addresses = addresses;
+
+            try {
+                const res = await fetch('/api/user/profile', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: currentUser.email, addresses })
+                });
+                const j = await res.json();
+                if (res.ok && j && j.success) {
+                    FlowerShop.setUser(currentUser);
+                    FlowerShop.showToast(editingAddrIndex !== null ? 'Address updated!' : 'Delivery address saved!', 'success');
+                    editingAddrIndex = null;
+                    $('#newAddressForm')[0].reset();
+                    $('#addressFormBox').slideUp();
+                    renderSavedAddresses();
+                } else {
+                    FlowerShop.showToast(j.message || 'Failed to save address', 'danger');
+                }
+            } catch (err) {
+                FlowerShop.showToast('Network error saving address', 'danger');
+            }
+        });
+
+        async function deleteAddress(idx) {
+            if (!confirm('Are you sure you want to remove this address?')) return;
+            const addresses = currentUser.addresses || [];
+            addresses.splice(idx, 1);
+            currentUser.addresses = addresses;
+            try {
+                const res = await fetch('/api/user/profile', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: currentUser.email, addresses })
+                });
+                const j = await res.json();
+                if (res.ok && j && j.success) {
+                    FlowerShop.setUser(currentUser);
+                    FlowerShop.showToast('Address removed', 'info');
+                    renderSavedAddresses();
+                } else {
+                    FlowerShop.showToast(j.message || 'Failed to remove address', 'danger');
+                }
+            } catch (e) {
+                FlowerShop.showToast('Error removing address', 'danger');
+            }
+        }
+
+        // Wishlist Grid
+        function renderWishlistGrid() {
+            const wishlist = FlowerShop.getWishlist();
+            $('#statWishlist').text(wishlist.length);
+            $('#wishlistCountBadge').text(wishlist.length);
+
+            const container = $('#wishlistGrid');
+            if (wishlist.length === 0) {
+                container.html(`
+                    <div class="col-md-12 text-center" style="padding:40px;color:#888;">
+                        <i class="fa fa-heart-o" style="font-size:42px;color:#ddd;margin-bottom:10px;"></i>
+                        <h4>Your Wishlist is empty</h4>
+                        <p class="text-muted">Save your favourite flower arrangements by clicking the heart icon on any product.</p>
+                        <a href="special.html" class="btn btn-primary" style="background:#F08080;border:none;margin-top:10px;">Explore Flowers</a>
+                    </div>
+                `);
+                return;
+            }
+
+            let html = '';
+            wishlist.forEach(id => {
+                const product = FlowerShop.findProduct(id);
+                if (product) {
+                    html += `
+                        <div class="col-md-4 col-sm-6" style="margin-bottom:20px;">
+                            <div class="products-detail" data-id="${product.id}" style="padding:15px;border:1px solid #eee;border-radius:8px;background:#fff;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,0.03);">
+                                <a href="product.html?id=${product.id}">
+                                    <img src="${product.image}" alt="${product.name}" style="height:170px;object-fit:cover;border-radius:6px;width:100%;margin-bottom:10px;" onerror="this.src='images/featured1.png'" />
+                                </a>
+                                <h4 style="font-size:16px;margin:5px 0;font-weight:600;"><a href="product.html?id=${product.id}" style="color:#333;">${product.name}</a></h4>
+                                <div style="color:#e67e22;font-size:12px;margin-bottom:6px;">
+                                    <i class="fa fa-star"></i> ${product.rating || 4.8} (${product.reviewsCount || 12} reviews)
+                                </div>
+                                <div class="price-tag" style="font-size:16px;color:#F08080;font-weight:bold;margin-bottom:12px;">Rs ${product.price.toLocaleString()}</div>
+                                <div style="display:flex;gap:6px;justify-content:center;">
+                                    <button class="btn btn-sm btn-primary" style="background:#F08080;border:none;flex:1;" onclick="FlowerShop.moveToCart('${product.id}'); renderWishlistGrid();">
+                                        <i class="fa fa-shopping-cart"></i> Move to Cart
+                                    </button>
+                                    <button class="btn btn-sm btn-default" title="Remove" onclick="FlowerShop.toggleWishlist('${product.id}'); renderWishlistGrid();">
+                                        <i class="fa fa-trash-o text-danger"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+            container.html(html);
+        }
+
+        function clearFullWishlist() {
+            if (!confirm('Clear all items from your wishlist?')) return;
+            localStorage.removeItem('hp_wishlist');
+            FlowerShop.syncWishlistIcons();
+            renderWishlistGrid();
+            FlowerShop.showToast('Wishlist cleared.', 'info');
+        }
+
+        $(document).ready(function() {
+            initAccountPage();
+        });
+    </script>
+</body>
+</html>
